@@ -41,3 +41,12 @@
 A one-ULP mismatch was traced to cross-language float range scaling and decimal formatting behavior in the determinism harness. The canonical `next_range_float` formulation is now locked to `((max - min) * raw) + min` (with explicit equal-range handling), and both Rust and TypeScript carry matching comments to prevent algebraic rewrites that can perturb IEEE-754 rounding.
 
 TypeScript remained the canonical output source for the committed golden data; Rust was updated to mirror deterministic behavior and the harness now includes a dedicated cross-language bit-pattern regression fixture for representative ranges (including signed zero).
+
+## Pipeline cleanup pass
+
+Fixed two pre-existing milestone-1 issues that surfaced when running the full `pnpm test` chain end-to-end:
+
+- `pnpm test:ts` matched zero packages on Windows because the `--filter './packages/**'` path glob did not resolve correctly under pnpm 10. Replaced with explicit package-name filters (`@demiurge/shared`, `@demiurge/web`).
+- The web client imports `@demiurge/wasm-sim/pkg/sim_core`, but the WASM build was never triggered before `pnpm dev` or `pnpm test:e2e` ran, causing Vite's import resolution to fail on a fresh checkout. Wired `wasm-pack build` into the root `dev` and `test` lifecycles so a fresh checkout of the repo can run `pnpm install && pnpm test` and have everything succeed. Added an `exports` map to `@demiurge/wasm-sim/package.json` so deep imports resolve cleanly. Added `@demiurge/wasm-sim` as an explicit dependency of `@demiurge/web`.
+
+After this cleanup, `pnpm test` runs `test:rust` → `wasm:build` → `test:ts` → `test:e2e` as a single chain with one WASM build per run, exits zero on success, and produces a Playwright screenshot at `docs/milestone-01-screenshot.png`.

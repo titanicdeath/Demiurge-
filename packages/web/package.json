@@ -8,6 +8,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@demiurge/shared": "workspace:*"
+    "@demiurge/shared": "workspace:*",
+    "@demiurge/wasm-sim": "workspace:*"
   }
 }
