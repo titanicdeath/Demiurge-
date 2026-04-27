@@ -1,0 +1,746 @@
+[
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-earth-analog",
+    "star": {
+      "spectralClass": "G2V",
+      "massSolar": 1,
+      "luminositySolar": 1,
+      "ageGyr": 4.6
+    },
+    "orbit": {
+      "semiMajorAxisAu": 1,
+      "eccentricity": 0.0167,
+      "inclinationDeg": 0,
+      "axialTiltDeg": 23.4,
+      "rotationPeriodHours": 24,
+      "tidalLock": "none"
+    },
+    "body": {
+      "massEarth": 1,
+      "radiusEarth": 1,
+      "bulkDensityKgM3": 5514,
+      "tectonics": "plate",
+      "composition": {
+        "core": "iron-nickel",
+        "mantle": "silicate",
+        "crust": "basalt+granite"
+      },
+      "magneticFieldMicrotesla": 50
+    },
+    "volatiles": {
+      "H2O": 1.4e+21,
+      "CO2": 3200000000000000,
+      "N2": 4000000000000000000,
+      "CH4": 500000000000000
+    },
+    "surface": {
+      "elevationHint": "mixed",
+      "dominantMaterials": [
+        "silicate rock",
+        "water ice"
+      ],
+      "impactHistory": "moderate"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 1.01,
+      "composition": {
+        "N2": 0.78,
+        "O2": 0.21,
+        "Ar": 0.009,
+        "CO2": 0.0004
+      }
+    },
+    "hydrosphere": {
+      "kind": "water-ocean",
+      "coverage": 0.71,
+      "salinityPsu": 35
+    },
+    "life": {
+      "kind": "complex"
+    },
+    "moons": [
+      {
+        "name": "Luna",
+        "massEarth": 0.0123,
+        "radiusEarth": 0.273,
+        "orbitSemiMajorAxisKm": 384400,
+        "composition": "rocky"
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-mars-like",
+    "star": {
+      "spectralClass": "G2V",
+      "massSolar": 1,
+      "luminositySolar": 1,
+      "ageGyr": 4.6
+    },
+    "orbit": {
+      "semiMajorAxisAu": 1.52,
+      "eccentricity": 0.093,
+      "inclinationDeg": 1.85,
+      "axialTiltDeg": 25.2,
+      "rotationPeriodHours": 24.6,
+      "tidalLock": "none"
+    },
+    "body": {
+      "massEarth": 0.107,
+      "radiusEarth": 0.532,
+      "bulkDensityKgM3": 3933,
+      "tectonics": "inert",
+      "composition": {
+        "core": "iron-sulfur",
+        "mantle": "silicate",
+        "crust": "basaltic"
+      },
+      "magneticFieldMicrotesla": 0.1
+    },
+    "volatiles": {
+      "H2O": 20000000000000000000,
+      "CO2": 25000000000000000,
+      "N2": 2000000000000000
+    },
+    "surface": {
+      "elevationHint": "rugged",
+      "dominantMaterials": [
+        "basalt",
+        "iron oxides",
+        "water ice"
+      ],
+      "impactHistory": "heavy"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 0.006,
+      "composition": {
+        "CO2": 0.95,
+        "N2": 0.027,
+        "Ar": 0.016
+      }
+    },
+    "hydrosphere": {
+      "kind": "none"
+    },
+    "life": {
+      "kind": "none"
+    },
+    "moons": [
+      {
+        "name": "Phobos",
+        "massEarth": 1.8e-8,
+        "radiusEarth": 0.0017,
+        "orbitSemiMajorAxisKm": 9376,
+        "composition": "rocky"
+      },
+      {
+        "name": "Deimos",
+        "massEarth": 2.4e-9,
+        "radiusEarth": 0.00098,
+        "orbitSemiMajorAxisKm": 23463,
+        "composition": "rocky"
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-venus-like",
+    "star": {
+      "spectralClass": "G2V",
+      "massSolar": 1,
+      "luminositySolar": 1,
+      "ageGyr": 4.6
+    },
+    "orbit": {
+      "semiMajorAxisAu": 0.72,
+      "eccentricity": 0.007,
+      "inclinationDeg": 3.4,
+      "axialTiltDeg": 177.4,
+      "rotationPeriodHours": 5832,
+      "tidalLock": "none"
+    },
+    "body": {
+      "massEarth": 0.815,
+      "radiusEarth": 0.949,
+      "bulkDensityKgM3": 5243,
+      "tectonics": "stagnant-lid",
+      "composition": {
+        "core": "iron",
+        "mantle": "silicate",
+        "crust": "basaltic"
+      },
+      "magneticFieldMicrotesla": 0
+    },
+    "volatiles": {
+      "CO2": 480000000000000000000,
+      "N2": 18000000000000000000,
+      "SO2": 10000000000000000
+    },
+    "surface": {
+      "elevationHint": "smooth",
+      "dominantMaterials": [
+        "basalt",
+        "sulfur compounds"
+      ],
+      "impactHistory": "quiet"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 92,
+      "composition": {
+        "CO2": 0.965,
+        "N2": 0.035,
+        "SO2": 0.00015
+      }
+    },
+    "hydrosphere": {
+      "kind": "none"
+    },
+    "life": {
+      "kind": "none"
+    },
+    "moons": []
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-titan-like",
+    "star": {
+      "spectralClass": "G2V",
+      "massSolar": 1,
+      "luminositySolar": 1,
+      "ageGyr": 4.2
+    },
+    "orbit": {
+      "semiMajorAxisAu": 9.5,
+      "eccentricity": 0.03,
+      "inclinationDeg": 0.3,
+      "axialTiltDeg": 0.3,
+      "rotationPeriodHours": 382.7,
+      "tidalLock": "primary"
+    },
+    "body": {
+      "massEarth": 0.0225,
+      "radiusEarth": 0.404,
+      "bulkDensityKgM3": 1880,
+      "tectonics": "cryovolcanic",
+      "composition": {
+        "core": "rock",
+        "mantle": "high-pressure ice",
+        "crust": "water ice"
+      },
+      "magneticFieldMicrotesla": 0
+    },
+    "volatiles": {
+      "CH4": 140000000000000000,
+      "N2": 4300000000000000000,
+      "H2O": 1e+21
+    },
+    "surface": {
+      "elevationHint": "mixed",
+      "dominantMaterials": [
+        "water ice",
+        "tholins"
+      ],
+      "impactHistory": "moderate"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 1.45,
+      "composition": {
+        "N2": 0.95,
+        "CH4": 0.05
+      }
+    },
+    "hydrosphere": {
+      "kind": "methane-lakes",
+      "coverage": 0.02
+    },
+    "life": {
+      "kind": "none"
+    },
+    "moons": []
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-europa-like",
+    "star": {
+      "spectralClass": "G2V",
+      "massSolar": 1,
+      "luminositySolar": 1,
+      "ageGyr": 4.5
+    },
+    "orbit": {
+      "semiMajorAxisAu": 5.2,
+      "eccentricity": 0.01,
+      "inclinationDeg": 0.47,
+      "axialTiltDeg": 0.1,
+      "rotationPeriodHours": 85.2,
+      "tidalLock": "primary"
+    },
+    "body": {
+      "massEarth": 0.008,
+      "radiusEarth": 0.245,
+      "bulkDensityKgM3": 3010,
+      "tectonics": "cryovolcanic",
+      "composition": {
+        "core": "iron",
+        "mantle": "silicate",
+        "crust": "water ice"
+      },
+      "magneticFieldMicrotesla": 0
+    },
+    "volatiles": {
+      "H2O": 2.8e+21,
+      "O2": 10000000000000
+    },
+    "surface": {
+      "elevationHint": "smooth",
+      "dominantMaterials": [
+        "water ice",
+        "salts"
+      ],
+      "impactHistory": "quiet"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 1e-11,
+      "composition": {
+        "O2": 1
+      }
+    },
+    "hydrosphere": {
+      "kind": "brine",
+      "coverage": 1,
+      "salinityPsu": 80
+    },
+    "life": {
+      "kind": "microbial"
+    },
+    "moons": []
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-airless-rockball",
+    "star": {
+      "spectralClass": "K5V",
+      "massSolar": 0.7,
+      "luminositySolar": 0.2,
+      "ageGyr": 6
+    },
+    "orbit": {
+      "semiMajorAxisAu": 0.4,
+      "eccentricity": 0.08,
+      "inclinationDeg": 2.2,
+      "axialTiltDeg": 2,
+      "rotationPeriodHours": 500,
+      "tidalLock": "none"
+    },
+    "body": {
+      "massEarth": 0.2,
+      "radiusEarth": 0.55,
+      "bulkDensityKgM3": 4200,
+      "tectonics": "inert",
+      "composition": {
+        "core": "metal-rich",
+        "mantle": "silicate",
+        "crust": "anorthosite"
+      },
+      "magneticFieldMicrotesla": 0
+    },
+    "volatiles": {
+      "H2O": 1000000000000000,
+      "Na": 100000000000000
+    },
+    "surface": {
+      "elevationHint": "rugged",
+      "dominantMaterials": [
+        "regolith",
+        "basalt"
+      ],
+      "impactHistory": "heavy"
+    },
+    "atmosphere": {
+      "kind": "none"
+    },
+    "hydrosphere": {
+      "kind": "none"
+    },
+    "life": {
+      "kind": "none"
+    },
+    "moons": []
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-tide-locked-m-dwarf-desert",
+    "star": {
+      "spectralClass": "M4V",
+      "massSolar": 0.2,
+      "luminositySolar": 0.008,
+      "ageGyr": 7
+    },
+    "orbit": {
+      "semiMajorAxisAu": 0.07,
+      "eccentricity": 0.02,
+      "inclinationDeg": 0,
+      "axialTiltDeg": 0.5,
+      "rotationPeriodHours": 240,
+      "tidalLock": "primary"
+    },
+    "body": {
+      "massEarth": 2.4,
+      "radiusEarth": 1.3,
+      "bulkDensityKgM3": 6100,
+      "tectonics": "episodic",
+      "composition": {
+        "core": "iron",
+        "mantle": "silicate",
+        "crust": "basaltic"
+      },
+      "magneticFieldMicrotesla": 8
+    },
+    "volatiles": {
+      "H2O": 200000000000000000000,
+      "CO2": 4000000000000000000,
+      "N2": 8000000000000000000
+    },
+    "surface": {
+      "elevationHint": "mixed",
+      "dominantMaterials": [
+        "silicate dust",
+        "evaporites"
+      ],
+      "impactHistory": "moderate"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 0.4,
+      "composition": {
+        "N2": 0.8,
+        "CO2": 0.19,
+        "H2O": 0.01
+      }
+    },
+    "hydrosphere": {
+      "kind": "none"
+    },
+    "life": {
+      "kind": "none"
+    },
+    "moons": [],
+    "rings": {
+      "innerRadiusKm": 60000,
+      "outerRadiusKm": 110000,
+      "composition": "dust"
+    }
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-super-earth-temperate",
+    "star": {
+      "spectralClass": "K2V",
+      "massSolar": 0.82,
+      "luminositySolar": 0.39,
+      "ageGyr": 6.8
+    },
+    "orbit": {
+      "semiMajorAxisAu": 0.66,
+      "eccentricity": 0.03,
+      "inclinationDeg": 1.2,
+      "axialTiltDeg": 18,
+      "rotationPeriodHours": 30,
+      "tidalLock": "none"
+    },
+    "body": {
+      "massEarth": 2.1,
+      "radiusEarth": 1.28,
+      "bulkDensityKgM3": 5600,
+      "tectonics": "episodic",
+      "composition": {
+        "core": "iron-nickel",
+        "mantle": "silicate",
+        "crust": "basalt+granite"
+      },
+      "magneticFieldMicrotesla": 72
+    },
+    "volatiles": {
+      "H2O": 2.8e+21,
+      "CO2": 110000000000000000,
+      "N2": 8000000000000000000,
+      "CH4": 200000000000000
+    },
+    "surface": {
+      "elevationHint": "mixed",
+      "dominantMaterials": [
+        "silicate rock",
+        "water ice"
+      ],
+      "impactHistory": "moderate"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 1.8,
+      "composition": {
+        "N2": 0.76,
+        "O2": 0.2,
+        "CO2": 0.02,
+        "Ar": 0.01
+      }
+    },
+    "hydrosphere": {
+      "kind": "water-ocean",
+      "coverage": 0.78,
+      "salinityPsu": 38
+    },
+    "life": {
+      "kind": "complex"
+    },
+    "moons": [
+      {
+        "name": "Thalassa",
+        "massEarth": 0.02,
+        "radiusEarth": 0.31,
+        "orbitSemiMajorAxisKm": 460000,
+        "composition": "rocky"
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-ocean-world",
+    "star": {
+      "spectralClass": "K6V",
+      "massSolar": 0.7,
+      "luminositySolar": 0.17,
+      "ageGyr": 5.4
+    },
+    "orbit": {
+      "semiMajorAxisAu": 0.43,
+      "eccentricity": 0.01,
+      "inclinationDeg": 0.4,
+      "axialTiltDeg": 9,
+      "rotationPeriodHours": 19,
+      "tidalLock": "none"
+    },
+    "body": {
+      "massEarth": 1.4,
+      "radiusEarth": 1.16,
+      "bulkDensityKgM3": 4700,
+      "tectonics": "stagnant-lid",
+      "composition": {
+        "core": "iron",
+        "mantle": "hydrated silicate",
+        "crust": "high-pressure ice + oceanic crust"
+      },
+      "magneticFieldMicrotesla": 24
+    },
+    "volatiles": {
+      "H2O": 7.5e+21,
+      "CO2": 150000000000000000,
+      "N2": 3200000000000000000,
+      "CH4": 11000000000000000
+    },
+    "surface": {
+      "elevationHint": "smooth",
+      "dominantMaterials": [
+        "global ocean",
+        "water ice"
+      ],
+      "impactHistory": "quiet"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 2.4,
+      "composition": {
+        "N2": 0.69,
+        "H2O": 0.17,
+        "CO2": 0.08,
+        "CH4": 0.06
+      }
+    },
+    "hydrosphere": {
+      "kind": "water-ocean",
+      "coverage": 1,
+      "salinityPsu": 42
+    },
+    "life": {
+      "kind": "microbial"
+    },
+    "moons": []
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-iron-world",
+    "star": {
+      "spectralClass": "K1V",
+      "massSolar": 0.79,
+      "luminositySolar": 0.35,
+      "ageGyr": 7.2
+    },
+    "orbit": {
+      "semiMajorAxisAu": 0.09,
+      "eccentricity": 0.15,
+      "inclinationDeg": 4.1,
+      "axialTiltDeg": 0.6,
+      "rotationPeriodHours": 58,
+      "tidalLock": "resonant"
+    },
+    "body": {
+      "massEarth": 0.35,
+      "radiusEarth": 0.5,
+      "bulkDensityKgM3": 7100,
+      "tectonics": "inert",
+      "composition": {
+        "core": "iron-rich",
+        "mantle": "thin silicate",
+        "crust": "basaltic regolith"
+      },
+      "magneticFieldMicrotesla": 2.8
+    },
+    "volatiles": {
+      "Na": 2200000000000000,
+      "K": 810000000000000
+    },
+    "surface": {
+      "elevationHint": "rugged",
+      "dominantMaterials": [
+        "metal-rich regolith",
+        "basalt"
+      ],
+      "impactHistory": "heavy"
+    },
+    "atmosphere": {
+      "kind": "none"
+    },
+    "hydrosphere": {
+      "kind": "none"
+    },
+    "life": {
+      "kind": "none"
+    },
+    "moons": []
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-volcanic-moon",
+    "star": {
+      "spectralClass": "G3V",
+      "massSolar": 0.97,
+      "luminositySolar": 0.92,
+      "ageGyr": 3.9
+    },
+    "orbit": {
+      "semiMajorAxisAu": 5.5,
+      "eccentricity": 0.02,
+      "inclinationDeg": 0.1,
+      "axialTiltDeg": 0.2,
+      "rotationPeriodHours": 42.5,
+      "tidalLock": "primary"
+    },
+    "body": {
+      "massEarth": 0.015,
+      "radiusEarth": 0.285,
+      "bulkDensityKgM3": 3520,
+      "tectonics": "episodic",
+      "composition": {
+        "core": "iron-sulfide",
+        "mantle": "silicate",
+        "crust": "sulfur-rich basalt"
+      },
+      "magneticFieldMicrotesla": 0
+    },
+    "volatiles": {
+      "SO2": 22000000000000000,
+      "S2": 900000000000000,
+      "CO2": 25000000000000
+    },
+    "surface": {
+      "elevationHint": "rugged",
+      "dominantMaterials": [
+        "sulfur frost",
+        "basaltic lava"
+      ],
+      "impactHistory": "quiet"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 0.0003,
+      "composition": {
+        "SO2": 0.93,
+        "S2": 0.06,
+        "NaCl": 0.01
+      }
+    },
+    "hydrosphere": {
+      "kind": "lava",
+      "coverage": 0.09
+    },
+    "life": {
+      "kind": "none"
+    },
+    "moons": []
+  },
+  {
+    "schemaVersion": 1,
+    "seed": "fixture-cold-rockball",
+    "star": {
+      "spectralClass": "M0V",
+      "massSolar": 0.55,
+      "luminositySolar": 0.07,
+      "ageGyr": 8.5
+    },
+    "orbit": {
+      "semiMajorAxisAu": 42,
+      "eccentricity": 0.24,
+      "inclinationDeg": 7.1,
+      "axialTiltDeg": 57,
+      "rotationPeriodHours": 153,
+      "tidalLock": "none"
+    },
+    "body": {
+      "massEarth": 0.003,
+      "radiusEarth": 0.18,
+      "bulkDensityKgM3": 1850,
+      "tectonics": "inert",
+      "composition": {
+        "core": "rock-ice mix",
+        "mantle": "water/ammonia ice",
+        "crust": "nitrogen+methane ice"
+      },
+      "magneticFieldMicrotesla": 0
+    },
+    "volatiles": {
+      "N2": 700000000000000000,
+      "CH4": 240000000000000000,
+      "CO": 8000000000000000,
+      "H2O": 50000000000000000000
+    },
+    "surface": {
+      "elevationHint": "smooth",
+      "dominantMaterials": [
+        "nitrogen ice",
+        "methane ice",
+        "tholins"
+      ],
+      "impactHistory": "heavy"
+    },
+    "atmosphere": {
+      "kind": "present",
+      "pressureBar": 0.00001,
+      "composition": {
+        "N2": 0.97,
+        "CH4": 0.03
+      }
+    },
+    "hydrosphere": {
+      "kind": "none"
+    },
+    "life": {
+      "kind": "none"
+    },
+    "moons": []
+  }
+]

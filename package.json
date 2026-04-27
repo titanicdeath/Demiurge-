@@ -16,7 +16,8 @@
     "test:e2e:no-build": "playwright test",
     "format": "prettier --check .",
     "gen:golden": "tsx scripts/gen-prng-golden.ts",
-    "gen:fixtures": "tsx scripts/gen-worldspec-fixture.ts"
+    "gen:fixtures": "tsx scripts/gen-worldspec-fixture.ts",
+    "gen:m2:fixtures": "tsx scripts/gen-m2-fixtures.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2",
