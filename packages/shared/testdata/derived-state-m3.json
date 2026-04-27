@@ -1,0 +1,1312 @@
+[
+  {
+    "archetype": "earth-analog",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 31557718.872965652,
+        "period_earth_days": 365.2513758445099,
+        "period_earth_years": 1.0000243012368766,
+        "mean_orbital_velocity_m_s": 29785.142169221028,
+        "min_distance_au": 0.9833,
+        "max_distance_au": 1.0167,
+        "time_averaged_insolation_w_m2": 1361.3563129772087,
+        "solar_day_seconds": 86637.19882951624
+      },
+      "orbital_state": {
+        "position_m": [
+          147099586259.31,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          30286.777677663147,
+          0
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 0.9833,
+        "current_orbital_speed_m_s": 30286.777677663147,
+        "instantaneous_insolation_w_m2": 1407.7941710037496
+      },
+      "moon_orbits": [
+        {
+          "name": "Luna",
+          "semi_major_axis_m": 384400000,
+          "period_seconds": 2357383.747312774,
+          "mean_velocity_m_s": 1024.5495392224661,
+          "hill_sphere_stable": true,
+          "inside_roche_limit": false,
+          "unstable": false,
+          "tidal_heating_power_w": 68747749.32355206,
+          "transit_interval_seconds": 2357383.747312774,
+          "eclipse_interval_seconds": 2357383.747312774,
+          "eclipse_duration_seconds": 12436.685111068367
+        }
+      ],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "earth-analog",
+    "timeSeconds": 7889429.718241413,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 31557718.872965652,
+        "period_earth_days": 365.2513758445099,
+        "period_earth_years": 1.0000243012368766,
+        "mean_orbital_velocity_m_s": 29785.142169221028,
+        "min_distance_au": 0.9833,
+        "max_distance_au": 1.0167,
+        "time_averaged_insolation_w_m2": 1361.3563129772087,
+        "solar_day_seconds": 86637.19882951624
+      },
+      "orbital_state": {
+        "position_m": [
+          -4996104539.0707445,
+          149556157103.6362,
+          0
+        ],
+        "velocity_m_s": [
+          -29772.6882727099,
+          -497.11145584389357,
+          0
+        ],
+        "true_anomaly_rad": 1.6041901192678225,
+        "mean_anomaly_rad": 1.5707963267948963,
+        "eccentric_anomaly_rad": 1.5874939987667058,
+        "current_distance_au": 1.0002788381642584,
+        "current_orbital_speed_m_s": 29776.83809244173,
+        "instantaneous_insolation_w_m2": 1360.4076924686733
+      },
+      "moon_orbits": [
+        {
+          "name": "Luna",
+          "semi_major_axis_m": 384400000,
+          "period_seconds": 2357383.747312774,
+          "mean_velocity_m_s": 1024.5495392224661,
+          "hill_sphere_stable": true,
+          "inside_roche_limit": false,
+          "unstable": false,
+          "tidal_heating_power_w": 68747749.32355206,
+          "transit_interval_seconds": 2357383.747312774,
+          "eclipse_interval_seconds": 2357383.747312774,
+          "eclipse_duration_seconds": 12436.685111068367
+        }
+      ],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "mars-like",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 59138592.613169424,
+        "period_earth_days": 684.4744515413128,
+        "period_earth_years": 1.874027396979576,
+        "mean_orbital_velocity_m_s": 24158.940456364187,
+        "min_distance_au": 1.37864,
+        "max_distance_au": 1.66136,
+        "time_averaged_insolation_w_m2": 591.7119505142465,
+        "solar_day_seconds": 88692.81743045559
+      },
+      "orbital_state": {
+        "position_m": [
+          206241608461.848,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          26506.836177640987,
+          856.1659498440118
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 1.3786399999999999,
+        "current_orbital_speed_m_s": 26520.659574791298,
+        "instantaneous_insolation_w_m2": 716.1590608336073
+      },
+      "moon_orbits": [
+        {
+          "name": "Phobos",
+          "semi_major_axis_m": 9376000,
+          "period_seconds": 27621.312258125734,
+          "mean_velocity_m_s": 2132.8148673597184,
+          "hill_sphere_stable": true,
+          "inside_roche_limit": false,
+          "unstable": false,
+          "tidal_heating_power_w": 92634129.76360683,
+          "transit_interval_seconds": 27621.312258125734,
+          "eclipse_interval_seconds": 27621.312258125734,
+          "eclipse_duration_seconds": 3178.3086772981987
+        },
+        {
+          "name": "Deimos",
+          "semi_major_axis_m": 23463000,
+          "period_seconds": 109343.57073293177,
+          "mean_velocity_m_s": 1348.2491551554426,
+          "hill_sphere_stable": true,
+          "inside_roche_limit": false,
+          "unstable": false,
+          "tidal_heating_power_w": 6066.1368185383135,
+          "transit_interval_seconds": 109343.57073293177,
+          "eclipse_interval_seconds": 109343.57073293177,
+          "eclipse_duration_seconds": 5027.81253307625
+        }
+      ],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "mars-like",
+    "timeSeconds": 14784648.153292356,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 59138592.613169424,
+        "period_earth_days": 684.4744515413128,
+        "period_earth_years": 1.874027396979576,
+        "mean_orbital_velocity_m_s": 24158.940456364187,
+        "min_distance_au": 1.37864,
+        "max_distance_au": 1.66136,
+        "time_averaged_insolation_w_m2": 591.7119505142465,
+        "solar_day_seconds": 88692.81743045559
+      },
+      "orbital_state": {
+        "position_m": [
+          -42173625278.69819,
+          225315766554.26764,
+          7277657959.401712
+        ],
+        "velocity_m_s": [
+          -23850.3281782934,
+          -2204.163190478814,
+          -71.19406703012449
+        ],
+        "true_anomaly_rad": 1.7557366638774898,
+        "mean_anomaly_rad": 1.5707963267948968,
+        "eccentric_anomaly_rad": 1.6633978720005922,
+        "current_distance_au": 1.5330714543366744,
+        "current_orbital_speed_m_s": 23952.06793113568,
+        "instantaneous_insolation_w_m2": 579.143846977264
+      },
+      "moon_orbits": [
+        {
+          "name": "Phobos",
+          "semi_major_axis_m": 9376000,
+          "period_seconds": 27621.312258125734,
+          "mean_velocity_m_s": 2132.8148673597184,
+          "hill_sphere_stable": true,
+          "inside_roche_limit": false,
+          "unstable": false,
+          "tidal_heating_power_w": 92634129.76360683,
+          "transit_interval_seconds": 27621.312258125734,
+          "eclipse_interval_seconds": 27621.312258125734,
+          "eclipse_duration_seconds": 3178.3086772981987
+        },
+        {
+          "name": "Deimos",
+          "semi_major_axis_m": 23463000,
+          "period_seconds": 109343.57073293177,
+          "mean_velocity_m_s": 1348.2491551554426,
+          "hill_sphere_stable": true,
+          "inside_roche_limit": false,
+          "unstable": false,
+          "tidal_heating_power_w": 6066.1368185383135,
+          "transit_interval_seconds": 109343.57073293177,
+          "eclipse_interval_seconds": 109343.57073293177,
+          "eclipse_duration_seconds": 5027.81253307625
+        }
+      ],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "venus-like",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 19279880.93996874,
+        "period_earth_days": 223.14677013852707,
+        "period_earth_years": 0.6109551055491271,
+        "mean_orbital_velocity_m_s": 35102.12667743597,
+        "min_distance_au": 0.7149599999999999,
+        "max_distance_au": 0.7250399999999999,
+        "time_averaged_insolation_w_m2": 2625.771248481073,
+        "solar_day_seconds": 235982311.24619752
+      },
+      "orbital_state": {
+        "position_m": [
+          106956493635.672,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          35286.48781004355,
+          2096.4036594279
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 0.7149599999999999,
+        "current_orbital_speed_m_s": 35348.70761812396,
+        "instantaneous_insolation_w_m2": 2662.856426300729
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "venus-like",
+    "timeSeconds": 4819970.234992185,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 19279880.93996874,
+        "period_earth_days": 223.14677013852707,
+        "period_earth_years": 0.6109551055491271,
+        "mean_orbital_velocity_m_s": 35102.12667743597,
+        "min_distance_au": 0.7149599999999999,
+        "max_distance_au": 0.7250399999999999,
+        "time_averaged_insolation_w_m2": 2625.771248481073,
+        "solar_day_seconds": 235982311.24619752
+      },
+      "orbital_state": {
+        "position_m": [
+          -1507921908.3106794,
+          107515609596.91011,
+          6387604190.531809
+        ],
+        "velocity_m_s": [
+          -35099.54689936235,
+          -245.25634770857224,
+          -14.570911891316895
+        ],
+        "true_anomaly_rad": 1.5847958694929338,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.5777961553039996,
+        "current_distance_au": 0.7200352788475878,
+        "current_orbital_speed_m_s": 35100.40677154756,
+        "instantaneous_insolation_w_m2": 2625.449624335374
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "titan-like",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 924040509.5807723,
+        "period_earth_days": 10694.913305333013,
+        "period_earth_years": 29.281678077805875,
+        "mean_orbital_velocity_m_s": 9663.576182545674,
+        "min_distance_au": 9.215,
+        "max_distance_au": 9.785,
+        "time_averaged_insolation_w_m2": 15.088968466289844,
+        "solar_day_seconds": 1379777.211388423
+      },
+      "orbital_state": {
+        "position_m": [
+          1378544378500.5,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          9957.829059894528,
+          52.13954751308317
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 9.215,
+        "current_orbital_speed_m_s": 9957.965561222574,
+        "instantaneous_insolation_w_m2": 16.029521630390136
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "titan-like",
+    "timeSeconds": 231010127.39519307,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 924040509.5807723,
+        "period_earth_days": 10694.913305333013,
+        "period_earth_years": 29.281678077805875,
+        "mean_orbital_velocity_m_s": 9663.576182545674,
+        "min_distance_au": 9.215,
+        "max_distance_au": 9.785,
+        "time_averaged_insolation_w_m2": 15.088968466289844,
+        "solar_day_seconds": 1379777.211388423
+      },
+      "orbital_state": {
+        "position_m": [
+          -85245232654.58743,
+          1419882012576.791,
+          7434552773.7452345
+        ],
+        "velocity_m_s": [
+          -9650.551517183241,
+          -289.3389005379111,
+          -1.5149887853306303
+        ],
+        "true_anomaly_rad": 1.6307603720911237,
+        "mean_anomaly_rad": 1.5707963267948968,
+        "eccentric_anomaly_rad": 1.6007828399409871,
+        "current_distance_au": 9.50854487553313,
+        "current_orbital_speed_m_s": 9654.888082228776,
+        "instantaneous_insolation_w_m2": 15.055081816712258
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "europa-like",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 374205889.5238841,
+        "period_earth_days": 4331.086684304214,
+        "period_earth_years": 11.858112580831131,
+        "mean_orbital_velocity_m_s": 13061.64889785763,
+        "min_distance_au": 5.148,
+        "max_distance_au": 5.252000000000001,
+        "time_averaged_insolation_w_m2": 50.341513640408486,
+        "solar_day_seconds": 306971.6110386653
+      },
+      "orbital_state": {
+        "position_m": [
+          770129838363.6,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          13192.481176185356,
+          108.22097693192023
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 5.148,
+        "current_orbital_speed_m_s": 13192.925049580668,
+        "instantaneous_insolation_w_m2": 51.36108203427858
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "europa-like",
+    "timeSeconds": 93551472.38097103,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.98847e+30,
+        "radius_m": 734350000,
+        "effective_temperature_k": 5775.555555555556,
+        "luminosity_w": 3.828e+26,
+        "bolometric_flux_at_1au_w_m2": 1361.1664654085755,
+        "peak_emission_wavelength_nm": 501.73042699115047,
+        "uv_flux_relative_to_sun": 1.0009241432056797,
+        "habitable_zone_inner_au": 0.950443247520335,
+        "habitable_zone_outer_au": 1.6760038078849773,
+        "main_sequence_lifetime_gyr": 10,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 374205889.5238841,
+        "period_earth_days": 4331.086684304214,
+        "period_earth_years": 11.858112580831131,
+        "mean_orbital_velocity_m_s": 13061.64889785763,
+        "min_distance_au": 5.148,
+        "max_distance_au": 5.252000000000001,
+        "time_averaged_insolation_w_m2": 50.341513640408486,
+        "solar_day_seconds": 306971.6110386653
+      },
+      "orbital_state": {
+        "position_m": [
+          -15557660009.071747,
+          777804971955.1338,
+          6380514234.080475
+        ],
+        "velocity_m_s": [
+          -13059.690004207258,
+          -130.5838001417887,
+          -1.0712091405775481
+        ],
+        "true_anomaly_rad": 1.5907949936482004,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.5807958268490556,
+        "current_distance_au": 5.200519965337493,
+        "current_orbital_speed_m_s": 13060.342885328067,
+        "instantaneous_insolation_w_m2": 50.32893088336943
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "airless-rockball",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.391929e+30,
+        "radius_m": 548830000,
+        "effective_temperature_k": 4477.777777777777,
+        "luminosity_w": 1.098537961479347e+26,
+        "bolometric_flux_at_1au_w_m2": 390.61991487564904,
+        "peak_emission_wavelength_nm": 647.1451016129033,
+        "uv_flux_relative_to_sun": 0.19608639467187947,
+        "habitable_zone_inner_au": 0.5091523581888937,
+        "habitable_zone_outer_au": 0.8978350820467523,
+        "main_sequence_lifetime_gyr": 24.3924205986611,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 9542157.266555047,
+        "period_earth_days": 110.4416350295723,
+        "period_earth_years": 0.30237892641073344,
+        "mean_orbital_velocity_m_s": 39402.03947223088,
+        "min_distance_au": 0.36800000000000005,
+        "max_distance_au": 0.43200000000000005,
+        "time_averaged_insolation_w_m2": 2449.224566906018,
+        "solar_day_seconds": 2218488.011603215
+      },
+      "orbital_state": {
+        "position_m": [
+          55052016417.600006,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          42659.56635665536,
+          1638.8152328698473
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 0.36800000000000005,
+        "current_orbital_speed_m_s": 42691.033216652984,
+        "instantaneous_insolation_w_m2": 2884.421630402653
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "airless-rockball",
+    "timeSeconds": 2385539.3166387617,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.391929e+30,
+        "radius_m": 548830000,
+        "effective_temperature_k": 4477.777777777777,
+        "luminosity_w": 1.098537961479347e+26,
+        "bolometric_flux_at_1au_w_m2": 390.61991487564904,
+        "peak_emission_wavelength_nm": 647.1451016129033,
+        "uv_flux_relative_to_sun": 0.19608639467187947,
+        "habitable_zone_inner_au": 0.5091523581888937,
+        "habitable_zone_outer_au": 0.8978350820467523,
+        "main_sequence_lifetime_gyr": 24.3924205986611,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 9542157.266555047,
+        "period_earth_days": 110.4416350295723,
+        "period_earth_years": 0.30237892641073344,
+        "mean_orbital_velocity_m_s": 39402.03947223088,
+        "min_distance_au": 0.36800000000000005,
+        "max_distance_au": 0.43200000000000005,
+        "time_averaged_insolation_w_m2": 2449.224566906018,
+        "solar_day_seconds": 2218488.011603215
+      },
+      "orbital_state": {
+        "position_m": [
+          -9553994042.54682,
+          59413970484.95038,
+          2282454515.8749747
+        ],
+        "velocity_m_s": [
+          -39028.0972575714,
+          -3106.6513917624293,
+          -119.34550814397326
+        ],
+        "true_anomaly_rad": 1.7301197162536528,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.6505420861270386,
+        "current_distance_au": 0.402549160443443,
+        "current_orbital_speed_m_s": 39151.72923086164,
+        "instantaneous_insolation_w_m2": 2410.5521452472653
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "tide-locked-m-dwarf-desert",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 3.97694e+29,
+        "radius_m": 399950200,
+        "effective_temperature_k": 2910,
+        "luminosity_w": 8.173469102691915e+24,
+        "bolometric_flux_at_1au_w_m2": 29.063354359031752,
+        "peak_emission_wavelength_nm": 995.7979226804124,
+        "uv_flux_relative_to_sun": 0.00764336318160529,
+        "habitable_zone_inner_au": 0.1388811927312849,
+        "habitable_zone_outer_au": 0.24490195334494272,
+        "main_sequence_lifetime_gyr": 559.0169943749473,
+        "branch": "pre-main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 1306885.8783756536,
+        "period_earth_days": 15.125993962681177,
+        "period_earth_years": 0.041413564858090654,
+        "mean_orbital_velocity_m_s": 50346.0792640218,
+        "min_distance_au": 0.06860000000000001,
+        "max_distance_au": 0.0714,
+        "time_averaged_insolation_w_m2": 5932.483423323732,
+        "solar_day_seconds": 2549526.7608393366
+      },
+      "orbital_state": {
+        "position_m": [
+          10262413930.020002,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          51363.274531679584,
+          0
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 0.06860000000000002,
+        "current_orbital_speed_m_s": 51363.274531679584,
+        "instantaneous_insolation_w_m2": 6175.8608995894
+      },
+      "moon_orbits": [],
+      "ring_stable": false,
+      "tidal_lock_state": "spin-orbit-resonance"
+    }
+  },
+  {
+    "archetype": "tide-locked-m-dwarf-desert",
+    "timeSeconds": 326721.4695939134,
+    "derived": {
+      "stellar": {
+        "mass_kg": 3.97694e+29,
+        "radius_m": 399950200,
+        "effective_temperature_k": 2910,
+        "luminosity_w": 8.173469102691915e+24,
+        "bolometric_flux_at_1au_w_m2": 29.063354359031752,
+        "peak_emission_wavelength_nm": 995.7979226804124,
+        "uv_flux_relative_to_sun": 0.00764336318160529,
+        "habitable_zone_inner_au": 0.1388811927312849,
+        "habitable_zone_outer_au": 0.24490195334494272,
+        "main_sequence_lifetime_gyr": 559.0169943749473,
+        "branch": "pre-main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 1306885.8783756536,
+        "period_earth_days": 15.125993962681177,
+        "period_earth_years": 0.041413564858090654,
+        "mean_orbital_velocity_m_s": 50346.0792640218,
+        "min_distance_au": 0.06860000000000001,
+        "max_distance_au": 0.0714,
+        "time_averaged_insolation_w_m2": 5932.483423323732,
+        "solar_day_seconds": 2549526.7608393366
+      },
+      "orbital_state": {
+        "position_m": [
+          -418818214.88056296,
+          10467663324.933142,
+          0
+        ],
+        "velocity_m_s": [
+          -50315.8934161638,
+          -1006.0495383361394,
+          0
+        ],
+        "true_anomaly_rad": 1.6107856660978277,
+        "mean_anomaly_rad": 1.5707963267948968,
+        "eccentric_anomaly_rad": 1.590792328527269,
+        "current_distance_au": 0.07002799253691526,
+        "current_orbital_speed_m_s": 50325.9502239187,
+        "instantaneous_insolation_w_m2": 5926.555879244143
+      },
+      "moon_orbits": [],
+      "ring_stable": false,
+      "tidal_lock_state": "spin-orbit-resonance"
+    }
+  },
+  {
+    "archetype": "super-earth-temperate",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.6305454e+30,
+        "radius_m": 595210000,
+        "effective_temperature_k": 4911.111111111111,
+        "luminosity_w": 1.911262824140894e+26,
+        "bolometric_flux_at_1au_w_m2": 679.6099432608862,
+        "peak_emission_wavelength_nm": 590.0440632352941,
+        "uv_flux_relative_to_sun": 0.3918579296365906,
+        "habitable_zone_inner_au": 0.6715841397816006,
+        "habitable_zone_outer_au": 1.1842659501508397,
+        "main_sequence_lifetime_gyr": 16.423486923683306,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 18685924.08561118,
+        "period_earth_days": 216.27226950938865,
+        "period_earth_years": 0.5921333621070621,
+        "mean_orbital_velocity_m_s": 33199.736424505514,
+        "min_distance_au": 0.6402,
+        "max_distance_au": 0.6798000000000001,
+        "time_averaged_insolation_w_m2": 1560.872301014278,
+        "solar_day_seconds": 108627.84194543211
+      },
+      "orbital_state": {
+        "position_m": [
+          95772556822.14,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          34203.623924329295,
+          716.4637861037049
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 0.6402,
+        "current_orbital_speed_m_s": 34211.126989822325,
+        "instantaneous_insolation_w_m2": 1658.1674464548241
+      },
+      "moon_orbits": [
+        {
+          "name": "Thalassa",
+          "semi_major_axis_m": 460000000,
+          "period_seconds": 2132448.9936098764,
+          "mean_velocity_m_s": 1355.3736806665083,
+          "hill_sphere_stable": true,
+          "inside_roche_limit": false,
+          "unstable": false,
+          "tidal_heating_power_w": 695355336.8395027,
+          "transit_interval_seconds": 2132448.9936098764,
+          "eclipse_interval_seconds": 2132448.9936098764,
+          "eclipse_duration_seconds": 12033.404685842532
+        }
+      ],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "super-earth-temperate",
+    "timeSeconds": 4671481.021402795,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.6305454e+30,
+        "radius_m": 595210000,
+        "effective_temperature_k": 4911.111111111111,
+        "luminosity_w": 1.911262824140894e+26,
+        "bolometric_flux_at_1au_w_m2": 679.6099432608862,
+        "peak_emission_wavelength_nm": 590.0440632352941,
+        "uv_flux_relative_to_sun": 0.3918579296365906,
+        "habitable_zone_inner_au": 0.6715841397816006,
+        "habitable_zone_outer_au": 1.1842659501508397,
+        "main_sequence_lifetime_gyr": 16.423486923683306,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 18685924.08561118,
+        "period_earth_days": 216.27226950938865,
+        "period_earth_years": 0.5921333621070621,
+        "mean_orbital_velocity_m_s": 33199.736424505514,
+        "min_distance_au": 0.6402,
+        "max_distance_au": 0.6798000000000001,
+        "time_averaged_insolation_w_m2": 1560.872301014278,
+        "solar_day_seconds": 108627.84194543211
+      },
+      "orbital_state": {
+        "position_m": [
+          -5922300373.897632,
+          98624152118.82846,
+          2065881486.261522
+        ],
+        "velocity_m_s": [
+          -33154.98948518596,
+          -993.8349896500814,
+          -20.817875352107045
+        ],
+        "true_anomaly_rad": 1.6307603720911232,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.600782839940987,
+        "current_distance_au": 0.6605936439844069,
+        "current_orbital_speed_m_s": 33169.88798795344,
+        "instantaneous_insolation_w_m2": 1557.3669101177436
+      },
+      "moon_orbits": [
+        {
+          "name": "Thalassa",
+          "semi_major_axis_m": 460000000,
+          "period_seconds": 2132448.9936098764,
+          "mean_velocity_m_s": 1355.3736806665083,
+          "hill_sphere_stable": true,
+          "inside_roche_limit": false,
+          "unstable": false,
+          "tidal_heating_power_w": 695355336.8395027,
+          "transit_interval_seconds": 2132448.9936098764,
+          "eclipse_interval_seconds": 2132448.9936098764,
+          "eclipse_duration_seconds": 12033.404685842532
+        }
+      ],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "ocean-world",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.391929e+30,
+        "radius_m": 533369999.99999994,
+        "effective_temperature_k": 4333.333333333333,
+        "luminosity_w": 1.098537961479347e+26,
+        "bolometric_flux_at_1au_w_m2": 390.61991487564904,
+        "peak_emission_wavelength_nm": 668.7166050000001,
+        "uv_flux_relative_to_sun": 0.1866752762974075,
+        "habitable_zone_inner_au": 0.5091523581888937,
+        "habitable_zone_outer_au": 0.8978350820467523,
+        "main_sequence_lifetime_gyr": 24.3924205986611,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 10635533.16914049,
+        "period_earth_days": 123.09644871690382,
+        "period_earth_years": 0.33702662947741246,
+        "mean_orbital_velocity_m_s": 38002.70142871719,
+        "min_distance_au": 0.42569999999999997,
+        "max_distance_au": 0.4343,
+        "time_averaged_insolation_w_m2": 2112.706583755217,
+        "solar_day_seconds": 68842.74638401103
+      },
+      "orbital_state": {
+        "position_m": [
+          63683813556.99,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          38383.71231658505,
+          267.9732172024294
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 0.42569999999999997,
+        "current_orbital_speed_m_s": 38384.64772337374,
+        "instantaneous_insolation_w_m2": 2155.4953023007997
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "ocean-world",
+    "timeSeconds": 2658883.2922851224,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.391929e+30,
+        "radius_m": 533369999.99999994,
+        "effective_temperature_k": 4333.333333333333,
+        "luminosity_w": 1.098537961479347e+26,
+        "bolometric_flux_at_1au_w_m2": 390.61991487564904,
+        "peak_emission_wavelength_nm": 668.7166050000001,
+        "uv_flux_relative_to_sun": 0.1866752762974075,
+        "habitable_zone_inner_au": 0.5091523581888937,
+        "habitable_zone_outer_au": 0.8978350820467523,
+        "main_sequence_lifetime_gyr": 24.3924205986611,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 10635533.16914049,
+        "period_earth_days": 123.09644871690382,
+        "period_earth_years": 0.33702662947741246,
+        "mean_orbital_velocity_m_s": 38002.70142871719,
+        "min_distance_au": 0.42569999999999997,
+        "max_distance_au": 0.4343,
+        "time_averaged_insolation_w_m2": 2112.706583755217,
+        "solar_day_seconds": 68842.74638401103
+      },
+      "orbital_state": {
+        "position_m": [
+          -1286498808.442457,
+          64319084672.42063,
+          449039214.9937171
+        ],
+        "velocity_m_s": [
+          -37997.002052542855,
+          -379.9354307131225,
+          -2.6524927776043805
+        ],
+        "true_anomaly_rad": 1.5907949936482002,
+        "mean_anomaly_rad": 1.5707963267948963,
+        "eccentric_anomaly_rad": 1.5807958268490554,
+        "current_distance_au": 0.4300429971336773,
+        "current_orbital_speed_m_s": 37998.90160186443,
+        "instantaneous_insolation_w_m2": 2112.1785171216216
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "iron-world",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.5708913000000002e+30,
+        "radius_m": 610670000,
+        "effective_temperature_k": 5055.555555555556,
+        "luminosity_w": 1.6775162993456603e+26,
+        "bolometric_flux_at_1au_w_m2": 596.4939738363653,
+        "peak_emission_wavelength_nm": 573.1856614285714,
+        "uv_flux_relative_to_sun": 0.3592184765715668,
+        "habitable_zone_inner_au": 0.6291781025051523,
+        "habitable_zone_outer_au": 1.1094874926910543,
+        "main_sequence_lifetime_gyr": 18.027365821599485,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 958640.6074895595,
+        "period_earth_days": 11.095377401499531,
+        "period_earth_years": 0.030378111532747505,
+        "mean_orbital_velocity_m_s": 88245.37811580715,
+        "min_distance_au": 0.0765,
+        "max_distance_au": 0.1035,
+        "time_averaged_insolation_w_m2": 74483.94291643858,
+        "solar_day_seconds": 266942.27659123816
+      },
+      "orbital_state": {
+        "position_m": [
+          11444237108.55,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          102380.80668186246,
+          7338.747474273592
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 0.0765,
+        "current_orbital_speed_m_s": 102643.49366287203,
+        "instantaneous_insolation_w_m2": 101925.57970632924
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "spin-orbit-resonance"
+    }
+  },
+  {
+    "archetype": "iron-world",
+    "timeSeconds": 239660.15187238986,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.5708913000000002e+30,
+        "radius_m": 610670000,
+        "effective_temperature_k": 5055.555555555556,
+        "luminosity_w": 1.6775162993456603e+26,
+        "bolometric_flux_at_1au_w_m2": 596.4939738363653,
+        "peak_emission_wavelength_nm": 573.1856614285714,
+        "uv_flux_relative_to_sun": 0.3592184765715668,
+        "habitable_zone_inner_au": 0.6291781025051523,
+        "habitable_zone_outer_au": 1.1094874926910543,
+        "main_sequence_lifetime_gyr": 18.027365821599485,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 958640.6074895595,
+        "period_earth_days": 11.095377401499531,
+        "period_earth_years": 0.030378111532747505,
+        "mean_orbital_velocity_m_s": 88245.37811580715,
+        "min_distance_au": 0.0765,
+        "max_distance_au": 0.1035,
+        "time_averaged_insolation_w_m2": 74483.94291643858,
+        "solar_day_seconds": 266942.27659123816
+      },
+      "orbital_state": {
+        "position_m": [
+          -4009640933.8062954,
+          13131572086.081686,
+          941282791.2113544
+        ],
+        "velocity_m_s": [
+          -85383.03174400683,
+          -12583.867630593473,
+          -902.0228476766978
+        ],
+        "true_anomaly_rad": 1.866433276487921,
+        "mean_anomaly_rad": 1.5707963267948968,
+        "eccentric_anomaly_rad": 1.719148719463455,
+        "current_distance_au": 0.0919954191226563,
+        "current_orbital_speed_m_s": 86310.07750871335,
+        "instantaneous_insolation_w_m2": 70481.2594166078
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "spin-orbit-resonance"
+    }
+  },
+  {
+    "archetype": "volcanic-moon",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.9288159e+30,
+        "radius_m": 718890000.0000001,
+        "effective_temperature_k": 5693.333333333333,
+        "luminosity_w": 3.4409075091549975e+26,
+        "bolometric_flux_at_1au_w_m2": 1223.52348799225,
+        "peak_emission_wavelength_nm": 508.97633870023424,
+        "uv_flux_relative_to_sun": 0.8805651708762062,
+        "habitable_zone_inner_au": 0.9011077492947687,
+        "habitable_zone_outer_au": 1.5890059959633531,
+        "main_sequence_lifetime_gyr": 10.791222926279298,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 413298443.8833248,
+        "period_earth_days": 4783.546804205148,
+        "period_earth_years": 13.096906313490758,
+        "mean_orbital_velocity_m_s": 12508.470244521852,
+        "min_distance_au": 5.39,
+        "max_distance_au": 5.61,
+        "time_averaged_insolation_w_m2": 40.45514929341278,
+        "solar_day_seconds": 153056.6604336235
+      },
+      "orbital_state": {
+        "position_m": [
+          806332523073,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          12761.172706713629,
+          22.272470630058663
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 5.39,
+        "current_orbital_speed_m_s": 12761.192143115815,
+        "instantaneous_insolation_w_m2": 42.11480368001797
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "volcanic-moon",
+    "timeSeconds": 103324610.9708312,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.9288159e+30,
+        "radius_m": 718890000.0000001,
+        "effective_temperature_k": 5693.333333333333,
+        "luminosity_w": 3.4409075091549975e+26,
+        "bolometric_flux_at_1au_w_m2": 1223.52348799225,
+        "peak_emission_wavelength_nm": 508.97633870023424,
+        "uv_flux_relative_to_sun": 0.8805651708762062,
+        "habitable_zone_inner_au": 0.9011077492947687,
+        "habitable_zone_outer_au": 1.5890059959633531,
+        "main_sequence_lifetime_gyr": 10.791222926279298,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 413298443.8833248,
+        "period_earth_days": 4783.546804205148,
+        "period_earth_years": 13.096906313490758,
+        "mean_orbital_velocity_m_s": 12508.470244521852,
+        "min_distance_au": 5.39,
+        "max_distance_au": 5.61,
+        "time_averaged_insolation_w_m2": 40.45514929341278,
+        "solar_day_seconds": 153056.6604336235
+      },
+      "orbital_state": {
+        "position_m": [
+          -32907145454.901188,
+          822458008567.9745,
+          1435461478.446224
+        ],
+        "velocity_m_s": [
+          -12500.970578505014,
+          -249.95236435516705,
+          -0.4362496160784159
+        ],
+        "true_anomaly_rad": 1.6107856660978275,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.5907923285272687,
+        "current_distance_au": 5.502199413614769,
+        "current_orbital_speed_m_s": 12503.469189765234,
+        "instantaneous_insolation_w_m2": 40.414727826790525
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "cold-rockball",
+    "timeSeconds": 0,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.0936585000000001e+30,
+        "radius_m": 486989999.99999994,
+        "effective_temperature_k": 3900,
+        "luminosity_w": 4.723254449156192e+25,
+        "bolometric_flux_at_1au_w_m2": 167.95024983759828,
+        "peak_emission_wavelength_nm": 743.01845,
+        "uv_flux_relative_to_sun": 0.06852938591060898,
+        "habitable_zone_inner_au": 0.3338573148981153,
+        "habitable_zone_outer_au": 0.5887212440293796,
+        "main_sequence_lifetime_gyr": 44.575197518230866,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 11582390254.25477,
+        "period_earth_days": 134055.44275757836,
+        "period_earth_years": 367.0313360509206,
+        "mean_orbital_velocity_m_s": 3408.4456788646617,
+        "min_distance_au": 31.92,
+        "max_distance_au": 52.08,
+        "time_averaged_insolation_w_m2": 0.09807638159134191,
+        "solar_day_seconds": 550826.1945126418
+      },
+      "orbital_state": {
+        "position_m": [
+          4775164032744,
+          0,
+          0
+        ],
+        "velocity_m_s": [
+          0,
+          4320.334693173302,
+          538.126132700392
+        ],
+        "true_anomaly_rad": 0,
+        "mean_anomaly_rad": 0,
+        "eccentric_anomaly_rad": 0,
+        "current_distance_au": 31.92,
+        "current_orbital_speed_m_s": 4353.71928306499,
+        "instantaneous_insolation_w_m2": 0.16483707098023712
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  },
+  {
+    "archetype": "cold-rockball",
+    "timeSeconds": 2895597563.5636926,
+    "derived": {
+      "stellar": {
+        "mass_kg": 1.0936585000000001e+30,
+        "radius_m": 486989999.99999994,
+        "effective_temperature_k": 3900,
+        "luminosity_w": 4.723254449156192e+25,
+        "bolometric_flux_at_1au_w_m2": 167.95024983759828,
+        "peak_emission_wavelength_nm": 743.01845,
+        "uv_flux_relative_to_sun": 0.06852938591060898,
+        "habitable_zone_inner_au": 0.3338573148981153,
+        "habitable_zone_outer_au": 0.5887212440293796,
+        "main_sequence_lifetime_gyr": 44.575197518230866,
+        "branch": "main-sequence"
+      },
+      "orbital_properties": {
+        "period_seconds": 11582390254.25477,
+        "period_earth_days": 134055.44275757836,
+        "period_earth_years": 367.0313360509206,
+        "mean_orbital_velocity_m_s": 3408.4456788646617,
+        "min_distance_au": 31.92,
+        "max_distance_au": 52.08,
+        "time_averaged_insolation_w_m2": 0.09807638159134191,
+        "solar_day_seconds": 550826.1945126418
+      },
+      "orbital_state": {
+        "position_m": [
+          -2961682227535.0635,
+          5888464359355.1045,
+          733447007763.2815
+        ],
+        "velocity_m_s": [
+          -3141.5128103260836,
+          -719.7330619661725,
+          -89.64749185392148
+        ],
+        "true_anomaly_rad": 2.0337290200485043,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.80428401335342,
+        "current_distance_au": 44.33222949082373,
+        "current_orbital_speed_m_s": 3224.151840519579,
+        "instantaneous_insolation_w_m2": 0.08545579302003538
+      },
+      "moon_orbits": [],
+      "ring_stable": true,
+      "tidal_lock_state": "free"
+    }
+  }
+]
