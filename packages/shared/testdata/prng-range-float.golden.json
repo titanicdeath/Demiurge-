@@ -1,0 +1,30 @@
+{
+  "seedHex": "0f0e0d0c0b0a09080706050403020100112233445566778899aabbccddeeff00",
+  "cases": [
+    {
+      "min": -1,
+      "max": 1,
+      "bitsHex": "0xbfa1f5d9bfc28680"
+    },
+    {
+      "min": 0,
+      "max": 1,
+      "bitsHex": "0x3fd7b664f3921fea"
+    },
+    {
+      "min": -1000,
+      "max": 1000,
+      "bitsHex": "0xc0827004c3c7fa5f"
+    },
+    {
+      "min": 0.5,
+      "max": 0.5000001,
+      "bitsHex": "0x3fe00000028c6932"
+    },
+    {
+      "min": -0,
+      "max": 0,
+      "bitsHex": "0x8000000000000000"
+    }
+  ]
+}
