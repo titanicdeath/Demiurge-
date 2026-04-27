@@ -1,0 +1,11 @@
+{
+  "name": "@demiurge/wasm-sim",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "wasm-pack build ../../crates/sim-core --target web --out-dir ../../packages/wasm-sim/pkg --release",
+    "build:dev": "wasm-pack build ../../crates/sim-core --target web --out-dir ../../packages/wasm-sim/pkg --dev",
+    "build:watch": "chokidar '../../crates/sim-core/src/**/*.rs' -c 'pnpm run build:dev' --initial",
+    "test": "echo \"no tests in wasm-sim\""
+  }
+}
