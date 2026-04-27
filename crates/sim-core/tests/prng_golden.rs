@@ -1,33 +1,21 @@
 use pretty_assertions::assert_eq;
 use serde_json::Value;
 use sim_core::prng::{Seed256, Xoshiro256PlusPlus};
-use std::path::PathBuf;
-
-fn golden_file_path() -> PathBuf {
-    PathBuf::from(env!("CARGO_MANIFEST_DIR"))
-        .join("..")
-        .join("..")
-        .join("packages")
-        .join("shared")
-        .join("testdata")
-        .join("prng.golden.json")
-}
 
 #[test]
 fn matches_golden_file() {
-    let file = std::fs::read_to_string(golden_file_path()).unwrap();
+    let file = std::fs::read_to_string("packages/shared/testdata/prng.golden.json").unwrap();
     let golden: Value = serde_json::from_str(&file).unwrap();
 
-    let mut rng =
-        Xoshiro256PlusPlus::from_seed(Seed256::from_hex(golden["seedHex"].as_str().unwrap()).unwrap());
+    let mut rng = Xoshiro256PlusPlus::from_seed(Seed256::from_hex(golden["seedHex"].as_str().unwrap()).unwrap());
     let mut fork = rng.fork(golden["fork"]["label"].as_str().unwrap());
 
     let out = serde_json::json!({
       "u64": (0..8).map(|_| format!("0x{:016x}", rng.next_u64())).collect::<Vec<String>>(),
-      "f64": (0..4).map(|_| (rng.next_f64()*1e16).round()/1e16).collect::<Vec<f64>>(),
+      "f64": (0..4).map(|_| ((rng.next_f64()*1e16).round()/1e16)).collect::<Vec<f64>>(),
       "ranges": {
         "int_10_99": (0..6).map(|_| rng.next_range_int(10,99)).collect::<Vec<i64>>(),
-        "float_neg1_1": (0..3).map(|_| (fork.next_range_float(-1.0,1.0)*1e16).round()/1e16).collect::<Vec<f64>>()
+        "float_neg1_1": (0..3).map(|_| ((fork.next_range_float(-1.0,1.0)*1e16).round()/1e16)).collect::<Vec<f64>>()
       },
       "fork": {
         "label": golden["fork"]["label"],

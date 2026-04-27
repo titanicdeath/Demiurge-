@@ -2,9 +2,8 @@ use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-#[serde(rename_all = "camelCase")]
 pub struct WorldSpec {
-    pub schema_version: u8,
+    pub schemaVersion: u8,
     pub seed: String,
     pub star: Star,
     pub orbit: Orbit,
@@ -19,114 +18,33 @@ pub struct WorldSpec {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-#[serde(rename_all = "camelCase")]
-pub struct Star {
-    pub spectral_class: String,
-    pub mass_solar: f64,
-    pub luminosity_solar: f64,
-    pub age_gyr: f64,
-    pub binary_companion: Option<BinaryCompanion>,
-}
-
+pub struct Star { pub spectralClass: String, pub massSolar: f64, pub luminositySolar: f64, pub ageGyr: f64, pub binaryCompanion: Option<BinaryCompanion> }
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-#[serde(rename_all = "camelCase")]
-pub struct BinaryCompanion {
-    pub spectral_class: String,
-    pub separation_au: f64,
-    pub eccentricity: f64,
-}
-
+pub struct BinaryCompanion { pub spectralClass: String, pub separationAu: f64, pub eccentricity: f64 }
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-#[serde(rename_all = "camelCase")]
-pub struct Orbit {
-    pub semi_major_axis_au: f64,
-    pub eccentricity: f64,
-    pub inclination_deg: f64,
-    pub axial_tilt_deg: f64,
-    pub rotation_period_hours: f64,
-    pub tidal_lock: String,
-}
-
+pub struct Orbit { pub semiMajorAxisAu: f64, pub eccentricity: f64, pub inclinationDeg: f64, pub axialTiltDeg: f64, pub rotationPeriodHours: f64, pub tidalLock: String }
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-#[serde(rename_all = "camelCase")]
-pub struct Body {
-    pub mass_earth: f64,
-    pub radius_earth: f64,
-    pub bulk_density_kg_m3: f64,
-    pub tectonics: String,
-    pub composition: Composition,
-    pub magnetic_field_microtesla: f64,
-}
-
+pub struct Body { pub massEarth: f64, pub radiusEarth: f64, pub bulkDensityKgM3: f64, pub tectonics: String, pub composition: Composition, pub magneticFieldMicrotesla: f64 }
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-pub struct Composition {
-    pub core: String,
-    pub mantle: String,
-    pub crust: String,
-}
-
+pub struct Composition { pub core: String, pub mantle: String, pub crust: String }
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-#[serde(rename_all = "camelCase")]
-pub struct Surface {
-    pub elevation_hint: String,
-    pub dominant_materials: Vec<String>,
-    pub impact_history: String,
-}
-
+pub struct Surface { pub elevationHint: String, pub dominantMaterials: Vec<String>, pub impactHistory: String }
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(tag = "kind")]
-pub enum Atmosphere {
-    #[serde(rename = "none")]
-    None,
-    #[serde(rename = "present", rename_all = "camelCase")]
-    Present {
-        pressure_bar: f64,
-        composition: BTreeMap<String, f64>,
-    },
-}
-
+pub enum Atmosphere { #[serde(rename = "none")] None, #[serde(rename = "present")] Present { pressureBar: f64, composition: BTreeMap<String, f64> } }
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(tag = "kind")]
 pub enum Hydrosphere {
-    #[serde(rename = "none")]
-    None,
-    #[serde(rename = "water-ocean", rename_all = "camelCase")]
-    WaterOcean { coverage: f64, salinity_psu: f64 },
-    #[serde(rename = "methane-lakes")]
-    MethaneLakes { coverage: f64 },
-    #[serde(rename = "brine", rename_all = "camelCase")]
-    Brine { coverage: f64, salinity_psu: f64 },
-    #[serde(rename = "lava")]
-    Lava { coverage: f64 },
+    #[serde(rename = "none")] None,
+    #[serde(rename = "water-ocean")] WaterOcean { coverage: f64, salinityPsu: f64 },
+    #[serde(rename = "methane-lakes")] MethaneLakes { coverage: f64 },
+    #[serde(rename = "brine")] Brine { coverage: f64, salinityPsu: f64 },
+    #[serde(rename = "lava")] Lava { coverage: f64 },
 }
-
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 #[serde(tag = "kind")]
-pub enum Life {
-    #[serde(rename = "none")]
-    None,
-    #[serde(rename = "microbial")]
-    Microbial,
-    #[serde(rename = "complex")]
-    Complex,
-    #[serde(rename = "sapient", rename_all = "camelCase")]
-    Sapient { tech_level: String, cultural_seed: String },
-}
-
+pub enum Life { #[serde(rename = "none")] None, #[serde(rename = "microbial")] Microbial, #[serde(rename = "complex")] Complex, #[serde(rename = "sapient")] Sapient { techLevel: String, culturalSeed: String } }
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-#[serde(rename_all = "camelCase")]
-pub struct MoonSpec {
-    pub name: String,
-    pub mass_earth: f64,
-    pub radius_earth: f64,
-    pub orbit_semi_major_axis_km: f64,
-    pub composition: String,
-}
-
+pub struct MoonSpec { pub name: String, pub massEarth: f64, pub radiusEarth: f64, pub orbitSemiMajorAxisKm: f64, pub composition: String }
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-#[serde(rename_all = "camelCase")]
-pub struct Rings {
-    pub inner_radius_km: f64,
-    pub outer_radius_km: f64,
-    pub composition: String,
-}
+pub struct Rings { pub innerRadiusKm: f64, pub outerRadiusKm: f64, pub composition: String }
