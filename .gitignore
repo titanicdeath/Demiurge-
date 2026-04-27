@@ -1,0 +1,6 @@
+node_modules
+pnpm-lock.yaml
+packages/wasm-sim/pkg
+playwright-report
+test-results
+target
