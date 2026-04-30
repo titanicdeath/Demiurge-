@@ -27,6 +27,6 @@
 - Fixture contract for M3 parity checkpoints.
 
 ## Determinism cleanup (post-M3)
-- Prior fix was incomplete: it resolved same-platform fixture/test drift but did not eliminate cross-platform one-ULP differences.
-- Actual root cause for the remaining Windows/Linux mismatches was fractional-exponent `pow`/`powf` usage (`**`, `Math.pow`, `f64::powf`) in deterministic physics paths (not just duplicate computation paths).
-- Canonical fix: replace fractional-exponent power operations with deterministic rewrites using `*`, `/`, `sqrt`, and `cbrt`, while keeping fixture generation on production derivation paths and preserving strict parity checks.
+- Two prior fixes both addressed real bugs but did not achieve durable cross-language bit-exact physics parity: (1) canonicalized computation paths between fixture generation and runtime, then (2) removed fractional-exponent `pow`/`powf` usage.
+- We now adopt the tiered determinism contract in Decision 0009: logic-layer parity (PRNG, WorldSpec/resolver, capabilities) remains bit-exact across TS/Rust, while astromech physics parity is cross-language ULP-tolerant at `|a-b|/max(|a|,|b|,1e-300) <= 1e-13`.
+- Intra-language determinism remains bit-exact; this preserves the key reproducibility guarantee that the same seed produces the same world on the same machine.
