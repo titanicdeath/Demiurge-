@@ -1,3 +1,4 @@
+pub mod astromech;
 pub mod capabilities;
 pub mod prng;
 pub mod worldspec;
