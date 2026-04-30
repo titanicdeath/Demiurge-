@@ -16,7 +16,7 @@ fn normalize_numbers(value: &serde_json::Value) -> serde_json::Value {
     match value {
         serde_json::Value::Number(n) => {
             let f = n.as_f64().unwrap();
-            let normalized = if f == 0.0 { 0.0 } else { format!("{:.12e}", f).parse::<f64>().unwrap() };
+            let normalized = if f == 0.0 { 0.0 } else { f };
             serde_json::json!(normalized)
         }
         serde_json::Value::Array(arr) => serde_json::Value::Array(arr.iter().map(normalize_numbers).collect()),

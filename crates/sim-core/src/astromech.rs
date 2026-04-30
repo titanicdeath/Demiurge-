@@ -158,7 +158,7 @@ fn derive_stellar_single(star: &Star) -> StellarProperties {
         radius_solar = interp(r0, r9, subtype);
         temp_k = interp(t0, t9, subtype);
 
-        let ms_life = 10.0 * mass_solar.powf(-2.5);
+        let ms_life = 10.0 / (mass_solar * mass_solar * mass_solar.sqrt());
         if lum_class.as_deref() != Some("V") {
             branch = "post-main-sequence".to_string();
             radius_solar *= 8.0;
@@ -175,9 +175,9 @@ fn derive_stellar_single(star: &Star) -> StellarProperties {
     }
 
     let luminosity_solar = if branch == "main-sequence" {
-        mass_solar.powf(3.5)
+        mass_solar * mass_solar * mass_solar * mass_solar.sqrt()
     } else {
-        radius_solar.powi(2) * (temp_k / 5772.0).powi(4)
+        radius_solar * radius_solar * (temp_k / 5772.0) * (temp_k / 5772.0) * (temp_k / 5772.0) * (temp_k / 5772.0)
     };
     let luminosity_w = luminosity_solar * SOLAR_LUMINOSITY_W;
     let flux_1au = luminosity_w / (4.0 * PI * AU_M * AU_M);
@@ -189,10 +189,10 @@ fn derive_stellar_single(star: &Star) -> StellarProperties {
         luminosity_w,
         bolometric_flux_at_1au_w_m2: flux_1au,
         peak_emission_wavelength_nm: WIEN_NM_K / temp_k,
-        uv_flux_relative_to_sun: luminosity_solar * (temp_k / 5772.0).powf(1.5),
+        uv_flux_relative_to_sun: luminosity_solar * (temp_k / 5772.0) * (temp_k / 5772.0).sqrt(),
         habitable_zone_inner_au: (luminosity_solar / 1.107).sqrt(),
         habitable_zone_outer_au: (luminosity_solar / 0.356).sqrt(),
-        main_sequence_lifetime_gyr: 10.0 * mass_solar.powf(-2.5),
+        main_sequence_lifetime_gyr: 10.0 / (mass_solar * mass_solar * mass_solar.sqrt()),
         branch,
         secondary: None,
         combined_bolometric_flux_at_planet_w_m2: None,
@@ -238,7 +238,7 @@ fn derive_kepler_scalars(orbit: &Orbit, star_mass_kg: f64) -> (f64, f64, f64, f6
     let a_m = orbit.semi_major_axis_au * AU_M;
     let e = orbit.eccentricity;
     let mu = G * star_mass_kg;
-    let n = (mu / a_m.powi(3)).sqrt();
+    let n = (mu / (a_m * a_m * a_m)).sqrt();
     let period = (2.0 * PI) / n;
     (a_m, e, n, period)
 }
@@ -248,7 +248,7 @@ pub fn derive_orbital_properties(orbit: &Orbit, star_mass_kg: f64, flux_1au: f64
     let mean_velocity = 2.0 * PI * a_m / period;
     let min_d = orbit.semi_major_axis_au * (1.0 - orbit.eccentricity);
     let max_d = orbit.semi_major_axis_au * (1.0 + orbit.eccentricity);
-    let avg_ins = flux_1au / (orbit.semi_major_axis_au.powi(2) * (1.0 - e * e).sqrt());
+    let avg_ins = flux_1au / (orbit.semi_major_axis_au * orbit.semi_major_axis_au * (1.0 - e * e).sqrt());
     let sidereal_day = orbit.rotation_period_hours * 3600.0;
     let inv = (1.0 / sidereal_day) - (1.0 / period);
     let solar_day = if inv.abs() < 1e-12 { f64::INFINITY } else { 1.0 / inv.abs() };
@@ -303,7 +303,7 @@ pub fn derive_orbital_state(orbit: &Orbit, star_mass_kg: f64, time_seconds: f64,
         eccentric_anomaly_rad: e_anomaly,
         current_distance_au: current_au,
         current_orbital_speed_m_s: speed,
-        instantaneous_insolation_w_m2: flux_1au / current_au.powi(2),
+        instantaneous_insolation_w_m2: flux_1au / (current_au * current_au),
     }
 }
 
@@ -312,9 +312,10 @@ pub fn derive_tidal_lock_state(orbit: &Orbit, star_mass_kg: f64, body_mass_kg: f
     let ratio = properties.period_seconds / (orbit.rotation_period_hours * 3600.0);
     let k2 = 0.3;
     let q = 100.0;
-    let inertia = 0.4 * body_mass_kg * body_radius_m.powi(2);
+    let inertia = 0.4 * body_mass_kg * body_radius_m * body_radius_m;
     let a_m = orbit.semi_major_axis_au * AU_M;
-    let t_lock = (inertia * q * a_m.powi(6)) / (3.0 * G * star_mass_kg.powi(2) * k2 * body_radius_m.powi(5));
+    let t_lock = (inertia * q * a_m * a_m * a_m * a_m * a_m * a_m)
+        / (3.0 * G * star_mass_kg * star_mass_kg * k2 * body_radius_m * body_radius_m * body_radius_m * body_radius_m * body_radius_m);
 
     if (ratio - 1.0).abs() < 0.05 || t_lock < 1e16 {
         "synchronous".to_string()
@@ -333,23 +334,25 @@ pub fn derive_moon_orbits(
     host_radius_m: f64,
     host_density_kg_m3: f64,
 ) -> Vec<MoonOrbitalState> {
-    let hill = host_orbit.semi_major_axis_au * AU_M * (1.0 - host_orbit.eccentricity) * (host_body_mass_kg / (3.0 * star_mass_kg)).powf(1.0 / 3.0);
+    let hill = host_orbit.semi_major_axis_au * AU_M * (1.0 - host_orbit.eccentricity) * (host_body_mass_kg / (3.0 * star_mass_kg)).cbrt();
 
     moons
         .iter()
         .map(|moon| {
             let moon_mass = moon.mass_earth * 5.9722e24;
             let moon_radius = moon.radius_earth * 6.371e6;
-            let moon_density = moon_mass / ((4.0 / 3.0) * PI * moon_radius.powi(3));
+            let moon_density = moon_mass / ((4.0 / 3.0) * PI * moon_radius * moon_radius * moon_radius);
             let a_m = moon.orbit_semi_major_axis_km * 1000.0;
-            let period = 2.0 * PI * (a_m.powi(3) / (G * (host_body_mass_kg + moon_mass))).sqrt();
+            let period = 2.0 * PI * ((a_m * a_m * a_m) / (G * (host_body_mass_kg + moon_mass))).sqrt();
             let vel = 2.0 * PI * a_m / period;
-            let roche = 2.44 * host_radius_m * (host_density_kg_m3 / moon_density).powf(1.0 / 3.0);
+            let roche = 2.44 * host_radius_m * (host_density_kg_m3 / moon_density).cbrt();
             let inside_roche = a_m < roche;
             let stable_hill = a_m < hill * 0.5;
             let e_moon = host_orbit.eccentricity.max(0.001) * 0.5;
             let n = 2.0 * PI / period;
-            let tidal = (21.0 / 2.0) * (0.3 / 100.0) * (G * host_body_mass_kg.powi(2) * moon_radius.powi(5) * n * e_moon.powi(2)) / a_m.powi(6);
+            let tidal = (21.0 / 2.0) * (0.3 / 100.0)
+                * (G * host_body_mass_kg * host_body_mass_kg * moon_radius * moon_radius * moon_radius * moon_radius * moon_radius * n * e_moon * e_moon)
+                / (a_m * a_m * a_m * a_m * a_m * a_m);
 
             MoonOrbitalState {
                 name: moon.name.clone(),
@@ -373,7 +376,7 @@ pub fn derive_ring_stability(spec: &WorldSpec) -> bool {
         let host_radius_m = spec.body.radius_earth * 6.371e6;
         let host_density = spec.body.bulk_density_kg_m3;
         let ring_density = if rings.composition == "ice" { 900.0 } else if rings.composition == "dust" { 2500.0 } else { 1400.0 };
-        let roche_km = (2.44 * host_radius_m * (host_density / ring_density).powf(1.0 / 3.0)) / 1000.0;
+        let roche_km = (2.44 * host_radius_m * (host_density / ring_density).cbrt()) / 1000.0;
         rings.outer_radius_km <= roche_km * 1.2
     } else {
         true

@@ -140,7 +140,7 @@ const deriveStellarSingle = (star: Star): Omit<StellarProperties, 'secondary' | 
   const isSubstellar = ['L', 'T', 'Y'].includes(parsed.classLetter);
 
   let massSolar = star.massSolar;
-  let radiusSolar = star.massSolar ** 0.8;
+  let radiusSolar = star.massSolar * Math.cbrt(Math.sqrt(star.massSolar));
   let tempK = 5772;
   let branch: StellarProperties['branch'] = 'main-sequence';
 
@@ -156,7 +156,7 @@ const deriveStellarSingle = (star: Star): Omit<StellarProperties, 'secondary' | 
     radiusSolar = interpSubtype(r.radius0, r.radius9, parsed.subtype);
     tempK = interpSubtype(r.temp0, r.temp9, parsed.subtype);
 
-    const msLife = 10 * massSolar ** -2.5;
+    const msLife = 10 / (massSolar * massSolar * Math.sqrt(massSolar));
     if (parsed.luminosityClass && parsed.luminosityClass !== 'V') {
       branch = 'post-main-sequence';
       radiusSolar *= 8;
@@ -172,7 +172,9 @@ const deriveStellarSingle = (star: Star): Omit<StellarProperties, 'secondary' | 
     }
   }
 
-  const luminositySolar = branch === 'main-sequence' ? massSolar ** 3.5 : (radiusSolar ** 2 * (tempK / 5772) ** 4);
+  const luminositySolar = branch === 'main-sequence'
+    ? massSolar * massSolar * massSolar * Math.sqrt(massSolar)
+    : (radiusSolar * radiusSolar * (tempK / 5772) * (tempK / 5772) * (tempK / 5772) * (tempK / 5772));
   const luminosityW = luminositySolar * SOLAR_LUMINOSITY_W;
   const flux1Au = luminosityW / (4 * Math.PI * AU_M * AU_M);
   const hzInner = Math.sqrt(luminositySolar / 1.107);
@@ -185,10 +187,10 @@ const deriveStellarSingle = (star: Star): Omit<StellarProperties, 'secondary' | 
     luminosity_w: luminosityW,
     bolometric_flux_at_1au_w_m2: flux1Au,
     peak_emission_wavelength_nm: WIEN_NM_K / tempK,
-    uv_flux_relative_to_sun: luminositySolar * (tempK / 5772) ** 1.5,
+    uv_flux_relative_to_sun: luminositySolar * (tempK / 5772) * Math.sqrt(tempK / 5772),
     habitable_zone_inner_au: hzInner,
     habitable_zone_outer_au: hzOuter,
-    main_sequence_lifetime_gyr: 10 * massSolar ** -2.5,
+    main_sequence_lifetime_gyr: 10 / (massSolar * massSolar * Math.sqrt(massSolar)),
     branch
   };
 };
@@ -301,7 +303,7 @@ export const deriveOrbitalState = (
     eccentric_anomaly_rad: eAnomaly,
     current_distance_au: currentDistanceAu,
     current_orbital_speed_m_s: speed,
-    instantaneous_insolation_w_m2: bolometricFluxAt1AuWm2 / (currentDistanceAu ** 2)
+    instantaneous_insolation_w_m2: bolometricFluxAt1AuWm2 / (currentDistanceAu * currentDistanceAu)
   };
 };
 
@@ -315,9 +317,10 @@ export const deriveTidalLockState = (
   const ratio = properties.period_seconds / (orbit.rotationPeriodHours * 3600);
   const k2 = 0.3;
   const q = 100;
-  const inertia = 0.4 * bodyMassKg * bodyRadiusM ** 2;
+  const inertia = 0.4 * bodyMassKg * bodyRadiusM * bodyRadiusM;
   const aM = orbit.semiMajorAxisAu * AU_M;
-  const tLock = (inertia * q * aM ** 6) / (3 * G * starMassKg ** 2 * k2 * bodyRadiusM ** 5);
+  const tLock = (inertia * q * aM * aM * aM * aM * aM * aM)
+    / (3 * G * starMassKg * starMassKg * k2 * bodyRadiusM * bodyRadiusM * bodyRadiusM * bodyRadiusM * bodyRadiusM);
 
   if (Math.abs(ratio - 1) < 0.05 || tLock < 1e16) return 'synchronous';
   if (Math.abs(ratio - 1.5) < 0.08 || orbit.tidalLock === 'resonant') return 'spin-orbit-resonance';
@@ -332,21 +335,23 @@ export const deriveMoonOrbits = (
   hostRadiusM = 6.371e6,
   hostDensityKgM3 = 5514
 ): MoonOrbitalState[] => {
-  const hillRadius = hostOrbit.semiMajorAxisAu * AU_M * (1 - hostOrbit.eccentricity) * (hostBodyMassKg / (3 * starMassKg)) ** (1 / 3);
+  const hillRadius = hostOrbit.semiMajorAxisAu * AU_M * (1 - hostOrbit.eccentricity) * Math.cbrt(hostBodyMassKg / (3 * starMassKg));
 
   return moons.map((moon) => {
     const moonMassKg = moon.massEarth * 5.9722e24;
     const moonRadiusM = moon.radiusEarth * 6.371e6;
-    const moonDensity = moonMassKg / ((4 / 3) * Math.PI * moonRadiusM ** 3);
+    const moonDensity = moonMassKg / ((4 / 3) * Math.PI * moonRadiusM * moonRadiusM * moonRadiusM);
     const aM = moon.orbitSemiMajorAxisKm * 1000;
-    const period = 2 * Math.PI * Math.sqrt(aM ** 3 / (G * (hostBodyMassKg + moonMassKg)));
+    const period = 2 * Math.PI * Math.sqrt((aM * aM * aM) / (G * (hostBodyMassKg + moonMassKg)));
     const meanVelocity = (2 * Math.PI * aM) / period;
-    const rocheLimit = 2.44 * hostRadiusM * (hostDensityKgM3 / moonDensity) ** (1 / 3);
+    const rocheLimit = 2.44 * hostRadiusM * Math.cbrt(hostDensityKgM3 / moonDensity);
     const insideRoche = aM < rocheLimit;
     const stableHill = aM < hillRadius * 0.5;
     const eMoon = Math.max(0.001, hostOrbit.eccentricity * 0.5);
     const n = 2 * Math.PI / period;
-    const tidalPower = (21 / 2) * (0.3 / 100) * (G * hostBodyMassKg ** 2 * moonRadiusM ** 5 * n * eMoon ** 2) / (aM ** 6);
+    const tidalPower = (21 / 2) * (0.3 / 100)
+      * (G * hostBodyMassKg * hostBodyMassKg * moonRadiusM * moonRadiusM * moonRadiusM * moonRadiusM * moonRadiusM * n * eMoon * eMoon)
+      / (aM * aM * aM * aM * aM * aM);
 
     return {
       name: moon.name,
@@ -369,7 +374,7 @@ export const deriveRingStability = (spec: WorldSpec): boolean => {
   const hostRadiusM = spec.body.radiusEarth * 6.371e6;
   const hostDensity = spec.body.bulkDensityKgM3;
   const ringDensity = spec.rings.composition === 'ice' ? 900 : spec.rings.composition === 'dust' ? 2500 : 1400;
-  const rocheLimitKm = (2.44 * hostRadiusM * (hostDensity / ringDensity) ** (1 / 3)) / 1000;
+  const rocheLimitKm = (2.44 * hostRadiusM * Math.cbrt(hostDensity / ringDensity)) / 1000;
   return spec.rings.outerRadiusKm <= rocheLimitKm * 1.2;
 };
 
