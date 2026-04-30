@@ -2,9 +2,9 @@ use crate::worldspec::{MoonSpec, Orbit, Star, WorldSpec};
 use serde::{Deserialize, Serialize};
 use std::f64::consts::PI;
 
-const SOLAR_MASS_KG: f64 = 1.98847e30;
+const SOLAR_MASS_KG: f64 = 1.9884700000000003e30;
 const SOLAR_RADIUS_M: f64 = 6.957e8;
-const SOLAR_LUMINOSITY_W: f64 = 3.828e26;
+const SOLAR_LUMINOSITY_W: f64 = 3.8279999999999994e26;
 const AU_M: f64 = 1.495978707e11;
 const G: f64 = 6.6743e-11;
 const WIEN_NM_K: f64 = 2.897771955e6;
@@ -90,6 +90,14 @@ fn mod2pi(value: f64) -> f64 {
         out += two_pi;
     }
     out
+}
+
+fn normalize_signed_zero(v: f64) -> f64 {
+    if v == 0.0 {
+        0.0
+    } else {
+        v
+    }
 }
 
 fn parse_spectral(st: &str) -> (char, f64, Option<String>) {
@@ -226,14 +234,21 @@ pub fn solve_kepler_equation(mean_anomaly_rad: f64, eccentricity: f64) -> f64 {
     mod2pi(e_anom)
 }
 
-pub fn derive_orbital_properties(orbit: &Orbit, star_mass_kg: f64, flux_1au: f64) -> OrbitalProperties {
+fn derive_kepler_scalars(orbit: &Orbit, star_mass_kg: f64) -> (f64, f64, f64, f64) {
     let a_m = orbit.semi_major_axis_au * AU_M;
+    let e = orbit.eccentricity;
     let mu = G * star_mass_kg;
-    let period = 2.0 * PI * (a_m.powi(3) / mu).sqrt();
+    let n = (mu / a_m.powi(3)).sqrt();
+    let period = (2.0 * PI) / n;
+    (a_m, e, n, period)
+}
+
+pub fn derive_orbital_properties(orbit: &Orbit, star_mass_kg: f64, flux_1au: f64) -> OrbitalProperties {
+    let (a_m, e, _n, period) = derive_kepler_scalars(orbit, star_mass_kg);
     let mean_velocity = 2.0 * PI * a_m / period;
     let min_d = orbit.semi_major_axis_au * (1.0 - orbit.eccentricity);
     let max_d = orbit.semi_major_axis_au * (1.0 + orbit.eccentricity);
-    let avg_ins = flux_1au / (orbit.semi_major_axis_au.powi(2) * (1.0 - orbit.eccentricity * orbit.eccentricity).sqrt());
+    let avg_ins = flux_1au / (orbit.semi_major_axis_au.powi(2) * (1.0 - e * e).sqrt());
     let sidereal_day = orbit.rotation_period_hours * 3600.0;
     let inv = (1.0 / sidereal_day) - (1.0 / period);
     let solar_day = if inv.abs() < 1e-12 { f64::INFINITY } else { 1.0 / inv.abs() };
@@ -251,25 +266,32 @@ pub fn derive_orbital_properties(orbit: &Orbit, star_mass_kg: f64, flux_1au: f64
 }
 
 pub fn derive_orbital_state(orbit: &Orbit, star_mass_kg: f64, time_seconds: f64, flux_1au: f64) -> OrbitalState {
-    let a_m = orbit.semi_major_axis_au * AU_M;
-    let e = orbit.eccentricity;
-    let mu = G * star_mass_kg;
-    let n = (mu / a_m.powi(3)).sqrt();
+    let (a_m, e, n, _period) = derive_kepler_scalars(orbit, star_mass_kg);
     let mean_anomaly = mod2pi(n * time_seconds);
     let e_anomaly = solve_kepler_equation(mean_anomaly, e);
     let r_m = a_m * (1.0 - e * e_anomaly.cos());
     let true_anomaly = 2.0 * (((1.0 + e).sqrt() * (e_anomaly / 2.0).sin()).atan2((1.0 - e).sqrt() * (e_anomaly / 2.0).cos()));
 
     let x_orb = a_m * (e_anomaly.cos() - e);
-    let y_orb = a_m * (1.0 - e * e).sqrt() * e_anomaly.sin();
-    let vx_orb = (-a_m * n * e_anomaly.sin()) / (1.0 - e * e_anomaly.cos());
-    let vy_orb = (a_m * n * (1.0 - e * e).sqrt() * e_anomaly.cos()) / (1.0 - e * e_anomaly.cos());
+    let one_minus_e_sq_sqrt = (1.0 - e * e).sqrt();
+    let y_orb = a_m * one_minus_e_sq_sqrt * e_anomaly.sin();
+    let one_minus_e_cos = 1.0 - e * e_anomaly.cos();
+    let vx_orb = (-a_m * n * e_anomaly.sin()) / one_minus_e_cos;
+    let vy_orb = (a_m * n * one_minus_e_sq_sqrt * e_anomaly.cos()) / one_minus_e_cos;
 
-    let inc = orbit.inclination_deg.to_radians();
+    let inc = (orbit.inclination_deg * PI) / 180.0;
     let cos_i = inc.cos();
     let sin_i = inc.sin();
-    let position = [x_orb, y_orb * cos_i, y_orb * sin_i];
-    let velocity = [vx_orb, vy_orb * cos_i, vy_orb * sin_i];
+    let position = [
+        normalize_signed_zero(x_orb),
+        normalize_signed_zero(y_orb * cos_i),
+        normalize_signed_zero(y_orb * sin_i),
+    ];
+    let velocity = [
+        normalize_signed_zero(vx_orb),
+        normalize_signed_zero(vy_orb * cos_i),
+        normalize_signed_zero(vy_orb * sin_i),
+    ];
     let current_au = r_m / AU_M;
     let speed = (vx_orb * vx_orb + vy_orb * vy_orb).sqrt();
 

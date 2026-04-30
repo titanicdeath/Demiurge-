@@ -12,24 +12,20 @@ fn fixture_path(file: &str) -> PathBuf {
         .join(file)
 }
 
-fn approx_json(a: &serde_json::Value, b: &serde_json::Value, eps: f64) -> bool {
-    match (a, b) {
-        (serde_json::Value::Number(na), serde_json::Value::Number(nb)) => {
-            let fa = na.as_f64().unwrap();
-            let fb = nb.as_f64().unwrap();
-            (fa - fb).abs() <= eps * fa.abs().max(fb.abs()).max(1.0)
+fn normalize_numbers(value: &serde_json::Value) -> serde_json::Value {
+    match value {
+        serde_json::Value::Number(n) => {
+            let f = n.as_f64().unwrap();
+            let normalized = if f == 0.0 { 0.0 } else { format!("{:.12e}", f).parse::<f64>().unwrap() };
+            serde_json::json!(normalized)
         }
-        (serde_json::Value::Array(aa), serde_json::Value::Array(ab)) => {
-            aa.len() == ab.len() && aa.iter().zip(ab.iter()).all(|(x, y)| approx_json(x, y, eps))
-        }
-        (serde_json::Value::Object(oa), serde_json::Value::Object(ob)) => {
-            oa.iter()
-                .all(|(k, v)| ob.get(k).map(|w| approx_json(v, w, eps)).unwrap_or(true))
-                && ob
-                    .iter()
-                    .all(|(k, v)| oa.get(k).map(|w| approx_json(w, v, eps)).unwrap_or(true))
-        }
-        _ => a == b,
+        serde_json::Value::Array(arr) => serde_json::Value::Array(arr.iter().map(normalize_numbers).collect()),
+        serde_json::Value::Object(map) => serde_json::Value::Object(
+            map.iter()
+                .map(|(k, v)| (k.clone(), normalize_numbers(v)))
+                .collect(),
+        ),
+        _ => value.clone(),
     }
 }
 
@@ -57,7 +53,8 @@ fn rust_astromech_matches_ts_fixture_for_m3_cases() {
         spec.seed = format!("m3-{}", row.archetype);
 
         let derived = derive_world_derived_state(&spec, row.time_seconds);
-        let derived_json = serde_json::to_value(derived).unwrap();
-        assert!(approx_json(&derived_json, &row.derived, 1e-1), "parity mismatch for archetype {}", row.archetype);
+        let derived_json = normalize_numbers(&serde_json::to_value(derived).unwrap());
+        let fixture_json = normalize_numbers(&row.derived);
+        assert_eq!(derived_json, fixture_json, "parity mismatch for archetype {}", row.archetype);
     }
 }

@@ -10,12 +10,11 @@ const SOLAR_LUMINOSITY_W = 3.828e26;
 const AU_M = 1.495978707e11;
 // CODATA/NIST 2018 gravitational constant.
 const G = 6.6743e-11;
-// CODATA Stefan–Boltzmann constant.
-const SIGMA = 5.670374419e-8;
 // Wien displacement constant (NIST), in nm*K.
 const WIEN_NM_K = 2.897771955e6;
 const SOLAR_CONSTANT_W_M2 = 1361;
 const EARTH_YEAR_SECONDS = 31_556_952;
+const TWO_PI = 2 * Math.PI;
 
 export interface StellarProperties {
   mass_kg: number;
@@ -105,12 +104,14 @@ interface SpectralParsed {
 }
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
+const normalizeSignedZero = (value: number) => (Object.is(value, -0) ? 0 : value);
 const mod2pi = (value: number) => {
-  const twoPi = Math.PI * 2;
-  let out = value % twoPi;
-  if (out < 0) out += twoPi;
+  let out = value % TWO_PI;
+  if (out < 0) out += TWO_PI;
   return out;
 };
+const sq = (v: number) => v * v;
+const cube = (v: number) => v * v * v;
 
 const parseSpectralClass = (spectralClass: string): SpectralParsed => {
   const m = spectralClass.trim().match(/^([OBAFGKMLTYWD])\s*([0-9](?:\.[0-9])?)?\s*([IV]+|D)?/i);
@@ -229,25 +230,34 @@ export const solveKeplerEquation = (meanAnomalyRad: number, eccentricity: number
   return mod2pi(eAnomaly);
 };
 
+const deriveKeplerScalars = (orbit: Orbit, starMassKg: number) => {
+  const aM = orbit.semiMajorAxisAu * AU_M;
+  const e = orbit.eccentricity;
+  // Canonical operation order for deterministic results across fixture generation and tests:
+  // n = sqrt((G * M) / a^3), then period = 2π / n.
+  const mu = G * starMassKg;
+  const n = Math.sqrt(mu / cube(aM));
+  const periodSeconds = TWO_PI / n;
+  return { aM, e, n, periodSeconds };
+};
+
 export const deriveOrbitalProperties = (
   orbit: Orbit,
   starMassKg: number,
   bolometricFluxAt1AuWm2 = SOLAR_CONSTANT_W_M2
 ): OrbitalProperties => {
-  const aM = orbit.semiMajorAxisAu * AU_M;
-  const mu = G * starMassKg;
-  const period = 2 * Math.PI * Math.sqrt((aM ** 3) / mu);
-  const meanVelocity = (2 * Math.PI * aM) / period;
+  const { aM, e, periodSeconds } = deriveKeplerScalars(orbit, starMassKg);
+  const meanVelocity = (TWO_PI * aM) / periodSeconds;
   const minDistance = orbit.semiMajorAxisAu * (1 - orbit.eccentricity);
   const maxDistance = orbit.semiMajorAxisAu * (1 + orbit.eccentricity);
-  const avgInsolation = bolometricFluxAt1AuWm2 / (orbit.semiMajorAxisAu ** 2 * Math.sqrt(1 - orbit.eccentricity ** 2));
+  const avgInsolation = bolometricFluxAt1AuWm2 / (sq(orbit.semiMajorAxisAu) * Math.sqrt(1 - sq(e)));
   const siderealDay = orbit.rotationPeriodHours * 3600;
-  const solarDay = Math.abs((1 / siderealDay) - (1 / period)) < 1e-12 ? Number.POSITIVE_INFINITY : 1 / Math.abs((1 / siderealDay) - (1 / period));
+  const solarDay = Math.abs((1 / siderealDay) - (1 / periodSeconds)) < 1e-12 ? Number.POSITIVE_INFINITY : 1 / Math.abs((1 / siderealDay) - (1 / periodSeconds));
 
   return {
-    period_seconds: period,
-    period_earth_days: period / 86400,
-    period_earth_years: period / EARTH_YEAR_SECONDS,
+    period_seconds: periodSeconds,
+    period_earth_days: periodSeconds / 86400,
+    period_earth_years: periodSeconds / EARTH_YEAR_SECONDS,
     mean_orbital_velocity_m_s: meanVelocity,
     min_distance_au: minDistance,
     max_distance_au: maxDistance,
@@ -262,25 +272,23 @@ export const deriveOrbitalState = (
   timeSeconds: number,
   bolometricFluxAt1AuWm2 = SOLAR_CONSTANT_W_M2
 ): OrbitalState => {
-  const aM = orbit.semiMajorAxisAu * AU_M;
-  const e = orbit.eccentricity;
-  const mu = G * starMassKg;
-  const n = Math.sqrt(mu / (aM ** 3));
+  const { aM, e, n } = deriveKeplerScalars(orbit, starMassKg);
   const meanAnomaly = mod2pi(n * timeSeconds);
   const eAnomaly = solveKeplerEquation(meanAnomaly, e);
   const rM = aM * (1 - e * Math.cos(eAnomaly));
   const trueAnomaly = 2 * Math.atan2(Math.sqrt(1 + e) * Math.sin(eAnomaly / 2), Math.sqrt(1 - e) * Math.cos(eAnomaly / 2));
 
   const xOrb = aM * (Math.cos(eAnomaly) - e);
-  const yOrb = aM * Math.sqrt(1 - e ** 2) * Math.sin(eAnomaly);
+  const oneMinusESqSqrt = Math.sqrt(1 - sq(e));
+  const yOrb = aM * oneMinusESqSqrt * Math.sin(eAnomaly);
   const vxOrb = (-aM * n * Math.sin(eAnomaly)) / (1 - e * Math.cos(eAnomaly));
-  const vyOrb = (aM * n * Math.sqrt(1 - e ** 2) * Math.cos(eAnomaly)) / (1 - e * Math.cos(eAnomaly));
+  const vyOrb = (aM * n * oneMinusESqSqrt * Math.cos(eAnomaly)) / (1 - e * Math.cos(eAnomaly));
 
   const inc = (orbit.inclinationDeg * Math.PI) / 180;
   const cosI = Math.cos(inc);
   const sinI = Math.sin(inc);
-  const position: [number, number, number] = [xOrb, yOrb * cosI, yOrb * sinI];
-  const velocity: [number, number, number] = [vxOrb, vyOrb * cosI, vyOrb * sinI];
+  const position: [number, number, number] = [normalizeSignedZero(xOrb), normalizeSignedZero(yOrb * cosI), normalizeSignedZero(yOrb * sinI)];
+  const velocity: [number, number, number] = [normalizeSignedZero(vxOrb), normalizeSignedZero(vyOrb * cosI), normalizeSignedZero(vyOrb * sinI)];
 
   const currentDistanceAu = rM / AU_M;
   const speed = Math.sqrt(vxOrb * vxOrb + vyOrb * vyOrb);

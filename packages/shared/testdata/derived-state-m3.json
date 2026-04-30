@@ -17,10 +17,10 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 31557718.872965652,
-        "period_earth_days": 365.2513758445099,
+        "period_seconds": 31557718.872965656,
+        "period_earth_days": 365.25137584450994,
         "period_earth_years": 1.0000243012368766,
-        "mean_orbital_velocity_m_s": 29785.142169221028,
+        "mean_orbital_velocity_m_s": 29785.142169221024,
         "min_distance_au": 0.9833,
         "max_distance_au": 1.0167,
         "time_averaged_insolation_w_m2": 1361.3563129772087,
@@ -65,7 +65,7 @@
   },
   {
     "archetype": "earth-analog",
-    "timeSeconds": 7889429.718241413,
+    "timeSeconds": 7889429.718241414,
     "derived": {
       "stellar": {
         "mass_kg": 1.98847e+30,
@@ -81,10 +81,10 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 31557718.872965652,
-        "period_earth_days": 365.2513758445099,
+        "period_seconds": 31557718.872965656,
+        "period_earth_days": 365.25137584450994,
         "period_earth_years": 1.0000243012368766,
-        "mean_orbital_velocity_m_s": 29785.142169221028,
+        "mean_orbital_velocity_m_s": 29785.142169221024,
         "min_distance_au": 0.9833,
         "max_distance_au": 1.0167,
         "time_averaged_insolation_w_m2": 1361.3563129772087,
@@ -92,18 +92,18 @@
       },
       "orbital_state": {
         "position_m": [
-          -4996104539.0707445,
+          -4996104539.070778,
           149556157103.6362,
           0
         ],
         "velocity_m_s": [
           -29772.6882727099,
-          -497.11145584389357,
+          -497.11145584390016,
           0
         ],
-        "true_anomaly_rad": 1.6041901192678225,
-        "mean_anomaly_rad": 1.5707963267948963,
-        "eccentric_anomaly_rad": 1.5874939987667058,
+        "true_anomaly_rad": 1.604190119267823,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.587493998766706,
         "current_distance_au": 1.0002788381642584,
         "current_orbital_speed_m_s": 29776.83809244173,
         "instantaneous_insolation_w_m2": 1360.4076924686733
@@ -145,9 +145,9 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 59138592.613169424,
-        "period_earth_days": 684.4744515413128,
-        "period_earth_years": 1.874027396979576,
+        "period_seconds": 59138592.61316942,
+        "period_earth_days": 684.4744515413126,
+        "period_earth_years": 1.8740273969795758,
         "mean_orbital_velocity_m_s": 24158.940456364187,
         "min_distance_au": 1.37864,
         "max_distance_au": 1.66136,
@@ -206,7 +206,7 @@
   },
   {
     "archetype": "mars-like",
-    "timeSeconds": 14784648.153292356,
+    "timeSeconds": 14784648.153292354,
     "derived": {
       "stellar": {
         "mass_kg": 1.98847e+30,
@@ -222,9 +222,9 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 59138592.613169424,
-        "period_earth_days": 684.4744515413128,
-        "period_earth_years": 1.874027396979576,
+        "period_seconds": 59138592.61316942,
+        "period_earth_days": 684.4744515413126,
+        "period_earth_years": 1.8740273969795758,
         "mean_orbital_velocity_m_s": 24158.940456364187,
         "min_distance_au": 1.37864,
         "max_distance_au": 1.66136,
@@ -233,18 +233,18 @@
       },
       "orbital_state": {
         "position_m": [
-          -42173625278.69819,
+          -42173625278.698135,
           225315766554.26764,
           7277657959.401712
         ],
         "velocity_m_s": [
           -23850.3281782934,
-          -2204.163190478814,
-          -71.19406703012449
+          -2204.1631904788087,
+          -71.19406703012432
         ],
-        "true_anomaly_rad": 1.7557366638774898,
-        "mean_anomaly_rad": 1.5707963267948968,
-        "eccentric_anomaly_rad": 1.6633978720005922,
+        "true_anomaly_rad": 1.7557366638774894,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.663397872000592,
         "current_distance_au": 1.5330714543366744,
         "current_orbital_speed_m_s": 23952.06793113568,
         "instantaneous_insolation_w_m2": 579.143846977264
@@ -399,10 +399,10 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 924040509.5807723,
-        "period_earth_days": 10694.913305333013,
-        "period_earth_years": 29.281678077805875,
-        "mean_orbital_velocity_m_s": 9663.576182545674,
+        "period_seconds": 924040509.5807722,
+        "period_earth_days": 10694.913305333012,
+        "period_earth_years": 29.28167807780587,
+        "mean_orbital_velocity_m_s": 9663.576182545676,
         "min_distance_au": 9.215,
         "max_distance_au": 9.785,
         "time_averaged_insolation_w_m2": 15.088968466289844,
@@ -433,7 +433,7 @@
   },
   {
     "archetype": "titan-like",
-    "timeSeconds": 231010127.39519307,
+    "timeSeconds": 231010127.39519304,
     "derived": {
       "stellar": {
         "mass_kg": 1.98847e+30,
@@ -449,10 +449,10 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 924040509.5807723,
-        "period_earth_days": 10694.913305333013,
-        "period_earth_years": 29.281678077805875,
-        "mean_orbital_velocity_m_s": 9663.576182545674,
+        "period_seconds": 924040509.5807722,
+        "period_earth_days": 10694.913305333012,
+        "period_earth_years": 29.28167807780587,
+        "mean_orbital_velocity_m_s": 9663.576182545676,
         "min_distance_au": 9.215,
         "max_distance_au": 9.785,
         "time_averaged_insolation_w_m2": 15.088968466289844,
@@ -460,18 +460,18 @@
       },
       "orbital_state": {
         "position_m": [
-          -85245232654.58743,
+          -85245232654.58711,
           1419882012576.791,
           7434552773.7452345
         ],
         "velocity_m_s": [
           -9650.551517183241,
-          -289.3389005379111,
-          -1.5149887853306303
+          -289.33890053790896,
+          -1.514988785330619
         ],
-        "true_anomaly_rad": 1.6307603720911237,
-        "mean_anomaly_rad": 1.5707963267948968,
-        "eccentric_anomaly_rad": 1.6007828399409871,
+        "true_anomaly_rad": 1.6307603720911232,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.600782839940987,
         "current_distance_au": 9.50854487553313,
         "current_orbital_speed_m_s": 9654.888082228776,
         "instantaneous_insolation_w_m2": 15.055081816712258
@@ -599,10 +599,10 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 9542157.266555047,
-        "period_earth_days": 110.4416350295723,
-        "period_earth_years": 0.30237892641073344,
-        "mean_orbital_velocity_m_s": 39402.03947223088,
+        "period_seconds": 9542157.266555045,
+        "period_earth_days": 110.44163502957228,
+        "period_earth_years": 0.30237892641073333,
+        "mean_orbital_velocity_m_s": 39402.039472230885,
         "min_distance_au": 0.36800000000000005,
         "max_distance_au": 0.43200000000000005,
         "time_averaged_insolation_w_m2": 2449.224566906018,
@@ -616,14 +616,14 @@
         ],
         "velocity_m_s": [
           0,
-          42659.56635665536,
-          1638.8152328698473
+          42659.56635665537,
+          1638.8152328698475
         ],
         "true_anomaly_rad": 0,
         "mean_anomaly_rad": 0,
         "eccentric_anomaly_rad": 0,
         "current_distance_au": 0.36800000000000005,
-        "current_orbital_speed_m_s": 42691.033216652984,
+        "current_orbital_speed_m_s": 42691.03321665299,
         "instantaneous_insolation_w_m2": 2884.421630402653
       },
       "moon_orbits": [],
@@ -633,7 +633,7 @@
   },
   {
     "archetype": "airless-rockball",
-    "timeSeconds": 2385539.3166387617,
+    "timeSeconds": 2385539.316638761,
     "derived": {
       "stellar": {
         "mass_kg": 1.391929e+30,
@@ -649,10 +649,10 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 9542157.266555047,
-        "period_earth_days": 110.4416350295723,
-        "period_earth_years": 0.30237892641073344,
-        "mean_orbital_velocity_m_s": 39402.03947223088,
+        "period_seconds": 9542157.266555045,
+        "period_earth_days": 110.44163502957228,
+        "period_earth_years": 0.30237892641073333,
+        "mean_orbital_velocity_m_s": 39402.039472230885,
         "min_distance_au": 0.36800000000000005,
         "max_distance_au": 0.43200000000000005,
         "time_averaged_insolation_w_m2": 2449.224566906018,
@@ -660,20 +660,20 @@
       },
       "orbital_state": {
         "position_m": [
-          -9553994042.54682,
+          -9553994042.546806,
           59413970484.95038,
           2282454515.8749747
         ],
         "velocity_m_s": [
-          -39028.0972575714,
-          -3106.6513917624293,
-          -119.34550814397326
+          -39028.097257571404,
+          -3106.651391762421,
+          -119.34550814397295
         ],
-        "true_anomaly_rad": 1.7301197162536528,
-        "mean_anomaly_rad": 1.5707963267948966,
-        "eccentric_anomaly_rad": 1.6505420861270386,
+        "true_anomaly_rad": 1.7301197162536526,
+        "mean_anomaly_rad": 1.5707963267948963,
+        "eccentric_anomaly_rad": 1.6505420861270383,
         "current_distance_au": 0.402549160443443,
-        "current_orbital_speed_m_s": 39151.72923086164,
+        "current_orbital_speed_m_s": 39151.729230861645,
         "instantaneous_insolation_w_m2": 2410.5521452472653
       },
       "moon_orbits": [],
@@ -699,14 +699,14 @@
         "branch": "pre-main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 1306885.8783756536,
-        "period_earth_days": 15.125993962681177,
-        "period_earth_years": 0.041413564858090654,
-        "mean_orbital_velocity_m_s": 50346.0792640218,
+        "period_seconds": 1306885.8783756534,
+        "period_earth_days": 15.125993962681173,
+        "period_earth_years": 0.04141356485809065,
+        "mean_orbital_velocity_m_s": 50346.07926402181,
         "min_distance_au": 0.06860000000000001,
         "max_distance_au": 0.0714,
         "time_averaged_insolation_w_m2": 5932.483423323732,
-        "solar_day_seconds": 2549526.7608393366
+        "solar_day_seconds": 2549526.760839338
       },
       "orbital_state": {
         "position_m": [
@@ -733,7 +733,7 @@
   },
   {
     "archetype": "tide-locked-m-dwarf-desert",
-    "timeSeconds": 326721.4695939134,
+    "timeSeconds": 326721.46959391335,
     "derived": {
       "stellar": {
         "mass_kg": 3.97694e+29,
@@ -749,29 +749,29 @@
         "branch": "pre-main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 1306885.8783756536,
-        "period_earth_days": 15.125993962681177,
-        "period_earth_years": 0.041413564858090654,
-        "mean_orbital_velocity_m_s": 50346.0792640218,
+        "period_seconds": 1306885.8783756534,
+        "period_earth_days": 15.125993962681173,
+        "period_earth_years": 0.04141356485809065,
+        "mean_orbital_velocity_m_s": 50346.07926402181,
         "min_distance_au": 0.06860000000000001,
         "max_distance_au": 0.0714,
         "time_averaged_insolation_w_m2": 5932.483423323732,
-        "solar_day_seconds": 2549526.7608393366
+        "solar_day_seconds": 2549526.760839338
       },
       "orbital_state": {
         "position_m": [
-          -418818214.88056296,
+          -418818214.88056064,
           10467663324.933142,
           0
         ],
         "velocity_m_s": [
           -50315.8934161638,
-          -1006.0495383361394,
+          -1006.0495383361282,
           0
         ],
-        "true_anomaly_rad": 1.6107856660978277,
-        "mean_anomaly_rad": 1.5707963267948968,
-        "eccentric_anomaly_rad": 1.590792328527269,
+        "true_anomaly_rad": 1.6107856660978275,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.5907923285272687,
         "current_distance_au": 0.07002799253691526,
         "current_orbital_speed_m_s": 50325.9502239187,
         "instantaneous_insolation_w_m2": 5926.555879244143
@@ -927,10 +927,10 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 10635533.16914049,
-        "period_earth_days": 123.09644871690382,
-        "period_earth_years": 0.33702662947741246,
-        "mean_orbital_velocity_m_s": 38002.70142871719,
+        "period_seconds": 10635533.169140492,
+        "period_earth_days": 123.09644871690384,
+        "period_earth_years": 0.3370266294774125,
+        "mean_orbital_velocity_m_s": 38002.701428717184,
         "min_distance_au": 0.42569999999999997,
         "max_distance_au": 0.4343,
         "time_averaged_insolation_w_m2": 2112.706583755217,
@@ -961,7 +961,7 @@
   },
   {
     "archetype": "ocean-world",
-    "timeSeconds": 2658883.2922851224,
+    "timeSeconds": 2658883.292285123,
     "derived": {
       "stellar": {
         "mass_kg": 1.391929e+30,
@@ -977,10 +977,10 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 10635533.16914049,
-        "period_earth_days": 123.09644871690382,
-        "period_earth_years": 0.33702662947741246,
-        "mean_orbital_velocity_m_s": 38002.70142871719,
+        "period_seconds": 10635533.169140492,
+        "period_earth_days": 123.09644871690384,
+        "period_earth_years": 0.3370266294774125,
+        "mean_orbital_velocity_m_s": 38002.701428717184,
         "min_distance_au": 0.42569999999999997,
         "max_distance_au": 0.4343,
         "time_averaged_insolation_w_m2": 2112.706583755217,
@@ -988,18 +988,18 @@
       },
       "orbital_state": {
         "position_m": [
-          -1286498808.442457,
+          -1286498808.4424856,
           64319084672.42063,
           449039214.9937171
         ],
         "velocity_m_s": [
           -37997.002052542855,
-          -379.9354307131225,
-          -2.6524927776043805
+          -379.93543071313934,
+          -2.6524927776044978
         ],
-        "true_anomaly_rad": 1.5907949936482002,
-        "mean_anomaly_rad": 1.5707963267948963,
-        "eccentric_anomaly_rad": 1.5807958268490554,
+        "true_anomaly_rad": 1.5907949936482007,
+        "mean_anomaly_rad": 1.5707963267948968,
+        "eccentric_anomaly_rad": 1.5807958268490558,
         "current_distance_au": 0.4300429971336773,
         "current_orbital_speed_m_s": 37998.90160186443,
         "instantaneous_insolation_w_m2": 2112.1785171216216
@@ -1027,9 +1027,9 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 958640.6074895595,
-        "period_earth_days": 11.095377401499531,
-        "period_earth_years": 0.030378111532747505,
+        "period_seconds": 958640.6074895593,
+        "period_earth_days": 11.09537740149953,
+        "period_earth_years": 0.0303781115327475,
         "mean_orbital_velocity_m_s": 88245.37811580715,
         "min_distance_au": 0.0765,
         "max_distance_au": 0.1035,
@@ -1061,7 +1061,7 @@
   },
   {
     "archetype": "iron-world",
-    "timeSeconds": 239660.15187238986,
+    "timeSeconds": 239660.15187238983,
     "derived": {
       "stellar": {
         "mass_kg": 1.5708913000000002e+30,
@@ -1077,9 +1077,9 @@
         "branch": "main-sequence"
       },
       "orbital_properties": {
-        "period_seconds": 958640.6074895595,
-        "period_earth_days": 11.095377401499531,
-        "period_earth_years": 0.030378111532747505,
+        "period_seconds": 958640.6074895593,
+        "period_earth_days": 11.09537740149953,
+        "period_earth_years": 0.0303781115327475,
         "mean_orbital_velocity_m_s": 88245.37811580715,
         "min_distance_au": 0.0765,
         "max_distance_au": 0.1035,
@@ -1088,18 +1088,18 @@
       },
       "orbital_state": {
         "position_m": [
-          -4009640933.8062954,
+          -4009640933.8062925,
           13131572086.081686,
           941282791.2113544
         ],
         "velocity_m_s": [
           -85383.03174400683,
-          -12583.867630593473,
-          -902.0228476766978
+          -12583.867630593455,
+          -902.0228476766964
         ],
-        "true_anomaly_rad": 1.866433276487921,
-        "mean_anomaly_rad": 1.5707963267948968,
-        "eccentric_anomaly_rad": 1.719148719463455,
+        "true_anomaly_rad": 1.8664332764879208,
+        "mean_anomaly_rad": 1.5707963267948966,
+        "eccentric_anomaly_rad": 1.7191487194634547,
         "current_distance_au": 0.0919954191226563,
         "current_orbital_speed_m_s": 86310.07750871335,
         "instantaneous_insolation_w_m2": 70481.2594166078

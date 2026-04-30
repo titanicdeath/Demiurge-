@@ -25,3 +25,8 @@
 - `DerivedState` top-level shape.
 - Enum/string contracts for branch and lock-state outputs.
 - Fixture contract for M3 parity checkpoints.
+
+## Determinism cleanup (post-M3)
+- We fixed an in-language TS determinism bug where fixture generation and runtime recomputation could diverge by one ULP on Windows for derived float fields (period/velocity/UV/tidal-heating family).
+- Root cause: duplicate floating-point computation paths and expression-shape differences (especially repeated orbital scalar math).
+- Canonical fix: fixture generation now uses production derivation functions only, and orbital scalar math in `astromech.ts` is centralized with one canonical formulation (`n = sqrt((G*M)/a^3)`, `period = 2π/n`) reused by both orbital property and state derivations.
