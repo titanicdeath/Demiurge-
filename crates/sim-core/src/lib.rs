@@ -1,6 +1,7 @@
 pub mod astromech;
 pub mod capabilities;
 pub mod prng;
+pub mod tectonics;
 pub mod worldspec;
 
 use wasm_bindgen::prelude::*;

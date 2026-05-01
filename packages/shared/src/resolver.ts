@@ -174,6 +174,18 @@ const baseByArchetype: Record<Archetype, Omit<WorldSpec, 'seed'>> = {
     life: { kind: 'none' },
     moons: []
   },
+  'm5-test-planet': {
+    schemaVersion: 1,
+    star: { spectralClass: 'G2V', massSolar: 1, luminositySolar: 1, ageGyr: 4.6 },
+    orbit: { semiMajorAxisAu: 1, eccentricity: 0.0167, inclinationDeg: 0, axialTiltDeg: 23.4, rotationPeriodHours: 24, tidalLock: 'none' },
+    body: { massEarth: 1, radiusEarth: 1, bulkDensityKgM3: 5514, tectonics: 'plate', composition: { core: 'iron-nickel', mantle: 'silicate', crust: 'basalt+granite' }, magneticFieldMicrotesla: 50 },
+    volatiles: { H2O: 1.4e21, CO2: 3.2e15, N2: 4e18, CH4: 5e14 },
+    surface: { elevationHint: 'mixed', dominantMaterials: ['silicate rock', 'water ice'], impactHistory: 'moderate' },
+    atmosphere: { kind: 'present', pressureBar: 1.01, composition: { N2: 0.78, O2: 0.21, Ar: 0.009, CO2: 0.0004 } },
+    hydrosphere: { kind: 'water-ocean', coverage: 0.7, salinityPsu: 35 },
+    life: { kind: 'none' },
+    moons: []
+  },
   'cold-rockball': {
     schemaVersion: 1,
     star: { spectralClass: 'M0V', massSolar: 0.55, luminositySolar: 0.07, ageGyr: 8.5 },

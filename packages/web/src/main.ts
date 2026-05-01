@@ -1,9 +1,9 @@
 import * as THREE from 'three';
-import { resolveWorldSpec } from '@demiurge/shared';
+import { colorForElevation, generateTectonics, resolveWorldSpec } from '@demiurge/shared';
 import { WebGPURenderer } from 'three/webgpu';
 import { cubeToSphere } from './lod';
 
-const world = resolveWorldSpec({ archetype: 'm4-test-planet', seed: 'm4-default' });
+const world = resolveWorldSpec({ archetype: 'm5-test-planet', seed: 'm5-default' });
 const radiusM = world.body.radiusEarth * 6_371_000;
 
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2e10);
@@ -24,8 +24,25 @@ if (supportsWebGPU) {
 const container = new THREE.Group();
 scene.add(container);
 
-const geometry = new THREE.IcosahedronGeometry(radiusM, 7);
-const material = new THREE.MeshStandardMaterial({ color: 0x888888, wireframe: false, flatShading: false });
+const geometry = new THREE.IcosahedronGeometry(radiusM, 8);
+const pos = geometry.getAttribute('position');
+const verts = Array.from({ length: pos.count }, (_, i) => ({ x: pos.getX(i), y: pos.getY(i), z: pos.getZ(i) }));
+const tectonics = await generateTectonics(world, verts);
+const colors = new Float32Array(pos.count * 3);
+const exaggeration = 20;
+for (let i = 0; i < pos.count; i += 1) {
+  const x = pos.getX(i); const y = pos.getY(i); const z = pos.getZ(i);
+  const l = Math.hypot(x, y, z) || 1;
+  const nx = x / l; const ny = y / l; const nz = z / l;
+  const elevation = tectonics.elevationsM[i]! * exaggeration;
+  const r = radiusM + elevation;
+  pos.setXYZ(i, nx * r, ny * r, nz * r);
+  const [cr, cg, cb] = colorForElevation(tectonics.elevationsM[i]!, world);
+  colors[i * 3] = cr; colors[i * 3 + 1] = cg; colors[i * 3 + 2] = cb;
+}
+geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+geometry.computeVertexNormals();
+const material = new THREE.MeshStandardMaterial({ color: 0x888888, vertexColors: true, wireframe: false, flatShading: false });
 const planet = new THREE.Mesh(geometry, material);
 container.add(planet);
 
