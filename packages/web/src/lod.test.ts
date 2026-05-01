@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cubeToSphere, magnitude, selectLodLevel } from './lod';
+import { computeActiveChunks, cubeToSphere, magnitude, selectLodLevel } from './lod';
 
 describe('cube-sphere mapping', () => {
   it('maps cube points to unit vectors', () => {
@@ -15,9 +15,15 @@ describe('LOD determinism', () => {
     expect(levelA).toBe(levelB);
   });
 
-  it('chunk detail grows when zooming in', () => {
-    const far = selectLodLevel(1e9, 6_371_000, 12);
-    const near = selectLodLevel(7e6, 6_371_000, 12);
+  it('chunk count grows when zooming in', () => {
+    const far = computeActiveChunks({ x: 0, y: 0, z: 1e9 }, 6_371_000, 1080, Math.PI / 3, 100, 7).length;
+    const near = computeActiveChunks({ x: 0, y: 0, z: 7e6 }, 6_371_000, 1080, Math.PI / 3, 100, 7).length;
     expect(near).toBeGreaterThan(far);
+  });
+
+  it('horizon-culls back-side chunks', () => {
+    const chunks = computeActiveChunks({ x: 0, y: 0, z: 1e9 }, 6_371_000, 1080, Math.PI / 3, 100, 0);
+    const hasNz = chunks.some((c) => c.face === 'nz');
+    expect(hasNz).toBe(false);
   });
 });
