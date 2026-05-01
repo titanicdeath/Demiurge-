@@ -87,4 +87,10 @@ export type Archetype =
   | 'titan-like'
   | 'europa-like'
   | 'airless-rockball'
-  | 'tide-locked-m-dwarf-desert';
+  | 'tide-locked-m-dwarf-desert'
+  | 'super-earth-temperate'
+  | 'ocean-world'
+  | 'iron-world'
+  | 'volcanic-moon'
+  | 'cold-rockball'
+  | 'm4-test-planet';
