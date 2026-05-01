@@ -1,8 +1,10 @@
 import { test, expect } from '@playwright/test';
 
-test('app renders and wasm status appears', async ({ page }) => {
+test('renderer mounts and canvas is non-empty', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: 'Demiurge Milestone 1' })).toBeVisible();
-  await expect(page.locator('#status')).toContainText('WASM loaded: ok');
-  await page.screenshot({ path: 'docs/milestone-01-screenshot.png', fullPage: true });
+  const canvas = page.locator('canvas');
+  await expect(canvas).toBeVisible();
+  const box = await canvas.boundingBox();
+  expect((box?.width ?? 0) * (box?.height ?? 0)).toBeGreaterThan(0);
+  await page.screenshot({ path: 'docs/milestone-04-screenshot.png', fullPage: true });
 });

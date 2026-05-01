@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@demiurge/shared": "workspace:*",
-    "@demiurge/wasm-sim": "workspace:*"
+    "@demiurge/wasm-sim": "workspace:*",
+    "three": "^0.181.0"
   }
 }
