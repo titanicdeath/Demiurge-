@@ -17,6 +17,10 @@ const renderer = supportsWebGPU
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+if (supportsWebGPU) {
+  await (renderer as WebGPURenderer).init();
+}
+
 const container = new THREE.Group();
 scene.add(container);
 
@@ -77,7 +81,14 @@ const renderLoop = () => {
   renderer.render(scene, camera);
   requestAnimationFrame(renderLoop);
 };
-requestAnimationFrame(renderLoop);
+
+const startRenderLoop = async () => {
+  if (supportsWebGPU) {
+    await (renderer as WebGPURenderer).init();
+  }
+  requestAnimationFrame(renderLoop);
+};
+void startRenderLoop();
 
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
