@@ -12,7 +12,7 @@ describe('capabilities derivation', () => {
 
   it('matches the parity fixture for all M2 archetype presets', () => {
     const fixture = JSON.parse(readFileSync(new URL('../testdata/world-capabilities-presets-m2.json', import.meta.url), 'utf-8')) as unknown[];
-    const archetypes = (Object.keys(archetypeDefaults) as Array<keyof typeof archetypeDefaults>).filter((a) => a !== 'm4-test-planet');
+    const archetypes = (Object.keys(archetypeDefaults) as Array<keyof typeof archetypeDefaults>).filter((a) => a !== 'm4-test-planet' && a !== 'm5-test-planet');
     const derived = archetypes.map((archetype) => deriveCapabilities(resolveWorldSpec({ archetype, seed: `fixture-${archetype}` })));
     expect(derived).toEqual(fixture);
   });
