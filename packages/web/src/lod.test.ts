@@ -26,4 +26,10 @@ describe('LOD determinism', () => {
     const hasNz = chunks.some((c) => c.face === 'nz');
     expect(hasNz).toBe(false);
   });
+
+  it('keeps active chunks bounded at 2.5Mm altitude', () => {
+    const chunks = computeActiveChunks({ x: 0, y: 0, z: 8_870_000 }, 6_371_000, 1080, Math.PI / 3, 100, 12);
+    expect(chunks.length).toBeGreaterThanOrEqual(10);
+    expect(chunks.length).toBeLessThanOrEqual(5_000);
+  });
 });

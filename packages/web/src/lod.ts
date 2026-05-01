@@ -38,11 +38,13 @@ const chunkCenter = (face: FaceName, level: number, x: number, y: number): Vec3 
 
 const faces: FaceName[] = ['px','nx','py','ny','pz','nz'];
 
-export const shouldSubdivide = (chunk:ChunkNode,camera:CameraState,thresholdPx=100,maxLevel=12):boolean => {
+export const shouldSubdivide = (chunk:ChunkNode,camera:CameraState,radius:number,thresholdPx=100,maxLevel=12):boolean => {
   if (chunk.level >= maxLevel) return false;
-  const dist = Math.max(1, Math.hypot(chunk.centerDir.x - camera.position.x, chunk.centerDir.y - camera.position.y, chunk.centerDir.z - camera.position.z));
+  const chunkCenter = { x: chunk.centerDir.x * radius, y: chunk.centerDir.y * radius, z: chunk.centerDir.z * radius };
+  const dist = Math.max(1, Math.hypot(chunkCenter.x - camera.position.x, chunkCenter.y - camera.position.y, chunkCenter.z - camera.position.z));
   const pxPerRad = camera.viewportHeight / camera.fovYRad;
-  const edgePx = chunk.angularRadius * 2 * pxPerRad / dist;
+  const chunkEdgeMeters = radius * chunk.angularRadius;
+  const edgePx = chunkEdgeMeters * pxPerRad / dist;
   return edgePx > thresholdPx;
 };
 
@@ -68,13 +70,17 @@ export const computeActiveChunks = (
   maxLevel = 12
 ): ChunkNode[] => {
   const result: ChunkNode[] = [];
-  const cameraNorm = { x: cameraPosition.x / radius, y: cameraPosition.y / radius, z: cameraPosition.z / radius };
   const recurse = (face: FaceName, level: number, x: number, y: number): void => {
     const centerDir = chunkCenter(face, level, x, y);
     if (!horizonVisible(centerDir, cameraPosition, radius)) return;
-    const dist = Math.max(1, magnitude({ x: cameraNorm.x - centerDir.x, y: cameraNorm.y - centerDir.y, z: cameraNorm.z - centerDir.z }));
+    const dist = Math.max(1, magnitude({
+      x: cameraPosition.x - centerDir.x * radius,
+      y: cameraPosition.y - centerDir.y * radius,
+      z: cameraPosition.z - centerDir.z * radius
+    }));
     const node: ChunkNode = { face, level, x, y, centerDir, angularRadius: Math.PI / (2 * (1 << level)) };
-    const edgePx = node.angularRadius * 2 * (viewportHeight / fovYRad) / dist;
+    const chunkEdgeMeters = radius * node.angularRadius;
+    const edgePx = chunkEdgeMeters * (viewportHeight / fovYRad) / dist;
     if (level < maxLevel && edgePx > thresholdPx) {
       recurse(face, level + 1, x * 2, y * 2);
       recurse(face, level + 1, x * 2 + 1, y * 2);
