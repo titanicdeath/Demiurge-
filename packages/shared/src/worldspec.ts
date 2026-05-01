@@ -92,4 +92,5 @@ export type Archetype =
   | 'ocean-world'
   | 'iron-world'
   | 'volcanic-moon'
-  | 'cold-rockball';
+  | 'cold-rockball'
+  | 'm4-test-planet';
